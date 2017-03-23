@@ -55,6 +55,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # New Gems
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 
@@ -62,3 +63,10 @@ gem 'pg'
 gem 'devise'
 gem 'omniauth-google-oauth2', '~> 0.4.1'
 gem 'omniauth-facebook'
+
+#Security
+gem 'figaro'
+
+#Model pictures
+gem 'cloudinary'
+gem 'carrierwave', '~> 0.11.2'
