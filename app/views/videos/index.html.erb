@@ -7,22 +7,20 @@
     <h2>Best videos of the day</h2>
     <div class="row plans">
       <% @videos.each do |video| %>
-        <div class="col-sm-8 col-sm-offset-2">
+        <div class="col-xs-8 col-xs-offset-2">
           <div class="plan">
-            <div class="first_line col-sm-12">
-              <div class="image col-sm-4 col-xs-8">
+            <div class="first_line col-xs-12">
+              <div class="image col-xs-12 col-sm-4">
                 <%= cl_image_tag video.photo, height: 130, width: 210, crop: :fill %>
               </div>
-              <div class="title col-sm-8">
+              <div class="title col-xs-12 col-sm-8">
                 <%= link_to video.title, video_path(:show) %>
               </div>
-            </div>
-            <div class="third_line">
               <div class="description">
                 <%= video.description %>
               </div>
             </div>
-            <div class="second_line col-xs-8">
+            <div class="second_line col-xs-9">
               <ul>
                 <li class="author"><a href="www.lol.com"><i class="fa fa-user" aria-hidden="true"></i> David Vincent</a></li>
                 <li class="category"><a href="www.lol.com"><i class="fa fa-tag" aria-hidden="true"></i> Category</a></li>
@@ -30,7 +28,7 @@
               </ul>
             </div>
             <div class="button">
-              <a class="btn btn-default btn-sm" href="#">Upvote</a>
+              <a class="btn btn-default btn-sm" href="#">UPVOTE</a>
             </div>
           </div>
         </div>

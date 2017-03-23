@@ -1162,16 +1162,16 @@ section * {
 }
 .price-1 .plan .title {
   color: #2c3e50;
-  font-size: 24px;
+  font-size: 15px;
   font-weight: 500;
   margin-bottom: 8px;
 }
 .price-1 .plan .description {
     display: table;
     font-weight: normal;
-    text-align: center;
-    padding: 10px 15px 10px 15px;
-}
+    text-align: left;
+    padding: 10px 15px 20px 15px;
+    margin-bottom: 10px
 }
 .price-1 .plan .description b {
   font-weight: 500;
@@ -1565,7 +1565,7 @@ section * {
 
 .second_line {
     display: block;
-    font-size: 15px;
+    font-size: 13px;
     margin-bottom: 10px
 }
 
