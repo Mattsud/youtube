@@ -30,15 +30,15 @@ a:hover {
 }
 h1,
 .h1 {
-  font-size: 48px /* 64px */;
+  font-size: 20px /* 30px */;
 }
 h2,
 .h2 {
-  font-size: 41px /* 52px */;
+  font-size: 20px /* 30px */;
 }
 h3,
 .h3 {
-  font-size: 32px /* 40px */;
+  font-size: 20px /* 30px */;
 }
 h4,
 .h4 {
@@ -67,7 +67,7 @@ h6,
   line-height: 1.2em;
 }
 h1 {
-  font-weight: 700;
+  font-weight: 500;
 }
 h2 {
   font-weight: 700;
@@ -1147,11 +1147,11 @@ section * {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  text-align: center;
   color: #283842;
   font-size: 18px;
   font-weight: normal;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  background-color: white;
 }
 .price-1 .plan > * {
   padding-left: 10px;
@@ -1167,17 +1167,19 @@ section * {
   margin-bottom: 8px;
 }
 .price-1 .plan .description {
-  margin: 26px 0;
-  padding-top: 22px;
-  border-top: 2px solid #ebedee;
-  line-height: 28px;
-  font-weight: normal;
+    display: table;
+    margin: 5px 0;
+    padding-top: 5px;
+    line-height: 28px;
+    font-weight: normal;
+    text-align: center;
+}
 }
 .price-1 .plan .description b {
   font-weight: 500;
 }
 .price-1 .plan .btn {
-  min-width: 170px;
+  min-width: 80px;
 }
 .price-1 .ribbon {
   position: absolute;
@@ -1531,8 +1533,8 @@ section * {
   }
 }
 .price-1 {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .price-1 h3 {
   margin: 0 0 8px;
@@ -1547,6 +1549,71 @@ section * {
   margin-bottom: 55px;
 }
 
+.title{
+  float:right;
+}
+
 .title a {
   color:#167ac6;
+}
+
+.image {
+    float: left;
+}
+
+.first_line {
+    display: inline;
+}
+
+.second_line {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 10px
+}
+
+.second_line li {
+    display: inline;
+}
+
+.author {
+    margin-right: 20px;
+}
+
+.category {
+    margin-right: 20px;
+}
+
+.button {
+  text-align:right;
+  margin-right:25px;
+}
+
+.third_line {
+    margin-bottom: 25px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 10px;
+}
+
+.price-1 h1 {
+    text-align: center;
+    font-size: 25px;
+}
+
+.price-1 h2 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px
+}
+
+.price-1 p {
+  text-align: center;
+  color: #2c3e50;
+  font-style: italic;
+}
+
+.heading {
+    border: 1px solid #e7e7e7;;
+    background-color: white;
+    padding: 15px 0px 15px 0px;
+    margin-bottom: 30px
 }

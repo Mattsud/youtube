@@ -1,17 +1,37 @@
 <section class="price-1">
   <div class="container">
-    <h3>Vidéos du jour</h3>
-    <p class="lead">Les meilleures vidéos de la journée</p>
+    <div class="heading">
+      <h1>The concept</h1>
+      <p>Some nice videos stay hidden because they have no visibility. <br>Let's give them some ! </p>
+    </div>
+    <h2>Best videos of the day</h2>
     <div class="row plans">
       <% @videos.each do |video| %>
         <div class="col-sm-8 col-sm-offset-2">
           <div class="plan">
-            <div class="title"><%= link_to video.title, video_path(:show) %>
+            <div class="first_line col-sm-12">
+              <div class="image col-sm-4 col-xs-8">
+                <%= cl_image_tag video.photo, height: 110, width: 196, crop: :fill %>
+              </div>
+              <div class="title col-sm-8">
+                <%= link_to video.title, video_path(:show) %>
+              </div>
             </div>
-            <div class="description">
-              <%= video.description %>
+            <div class="third_line">
+              <div class="description">
+                <%= video.description %>
+              </div>
             </div>
-            <a class="btn btn-primary" href="#">Upvote</a>
+            <div class="second_line col-xs-8">
+              <ul>
+                <li class="author"><a href="www.lol.com"><i class="fa fa-user" aria-hidden="true"></i> David Vincent</a></li>
+                <li class="category"><a href="www.lol.com"><i class="fa fa-tag" aria-hidden="true"></i> Category</a></li>
+                <li class="channel"><a href="ww.lol.com"><i class="fa fa-desktop" aria-hidden="true"></i> LOL Channel</a></li>
+              </ul>
+            </div>
+            <div class="button">
+              <a class="btn btn-default btn-sm" href="#">Upvote</a>
+            </div>
           </div>
         </div>
       <% end %>
