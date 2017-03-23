@@ -1143,7 +1143,7 @@ section * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   border: 1px solid #ebedee;
-  padding: 25px 5px 5px 5px;
+  padding: 25px 5px 10px 5px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
