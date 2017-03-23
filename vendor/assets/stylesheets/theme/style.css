@@ -1143,12 +1143,12 @@ section * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   border: 1px solid #ebedee;
-  padding: 25px 0;
+  padding: 25px 5px 5px 5px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  color: #283842;
-  font-size: 18px;
+  color: #555555;
+  font-size: 15px;
   font-weight: normal;
   margin-bottom: 20px;
   background-color: white;
@@ -1168,11 +1168,9 @@ section * {
 }
 .price-1 .plan .description {
     display: table;
-    margin: 5px 0;
-    padding-top: 5px;
-    line-height: 28px;
     font-weight: normal;
     text-align: center;
+    padding: 10px 15px 10px 15px;
 }
 }
 .price-1 .plan .description b {
