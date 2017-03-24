@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root to: 'public#index', as: :root
 
   resources :videos, only: [:index, :show, :new, :create]
+  resources :categories, only: [:show]
 end

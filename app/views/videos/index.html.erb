@@ -24,11 +24,13 @@
               </div>
             </div>
             <div class="second_line col-xs-9">
-              <ul>
-                <li class="author"><a href="www.lol.com"><i class="fa fa-user" aria-hidden="true"></i> David Vincent</a></li>
-                <li class="category"><a href="www.lol.com"><i class="fa fa-tag" aria-hidden="true"></i> Category</a></li>
-                <li class="channel"><a href="ww.lol.com"><i class="fa fa-desktop" aria-hidden="true"></i> LOL Channel</a></li>
-              </ul>
+              <% video.categories.each do |category| %>
+                <ul>
+                  <li class="author"><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "category.title", category_path(category.id) %></li>
+                  <li class="category"><i class="fa fa-tag" aria-hidden="true"></i> <%= link_to category.title, category_path(category.id) %></li>
+                  <li class="channel"><a href="ww.lol.com"><i class="fa fa-desktop" aria-hidden="true"></i> LOL Channel</a></li>
+                </ul>
+              <% end %>
             </div>
             <div class="button">
               <a class="btn btn-default btn-sm" href="#">UPVOTE</a>

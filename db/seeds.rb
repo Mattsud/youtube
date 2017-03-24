@@ -79,5 +79,3 @@ user_video_3.save!
 
 user_video_4 = UserVideo.new(user_id:2, video_id:4)
 user_video_4.save!
-
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
