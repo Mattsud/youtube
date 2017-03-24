@@ -1,0 +1,29 @@
+<section class="price-1">
+  <div class="container">
+    <div class="heading">
+      <h1>Rules before uploading</h1>
+      <p>Video from channel < 3000 subscribers
+        <br>Original content (no TV show re-upload)</p>
+    </div>
+    <h2>Upload the video</h2>
+    <div class="row plans">
+      <div class="col-xs-8 col-xs-offset-2">
+        <div class="plan">
+          <div class="first_line col-xs-12">
+            <div class="form_upload">
+              <%= simple_form_for @new_video do |f| %>
+                <%= f.input :title %>
+                <%= f.input :description, as: :text %>
+                <%= f.input :link %>
+
+            </div>
+          </div>
+          <div class="post-button-form">
+           <%= f.button :submit, "Submit", class:"btn btn-danger post-button-form" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

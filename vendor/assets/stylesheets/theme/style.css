@@ -347,9 +347,6 @@ li {
   line-height: 20px;
 }
 .btn {
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
   line-height: 22px;
   -webkit-transition: 0.25s;
   -moz-transition: 0.25s;
@@ -877,8 +874,12 @@ section * {
   padding: 30px 0 19px 30px;
 }
 .header-11 .navbar .btn {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 600;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-right: 10px;
 }
 .header-11 .navbar .btn.btn-primary {
   background-color: #16a085;
@@ -910,7 +911,7 @@ section * {
 }
 .header-11 .navbar .nav > li:active a,
 .header-11 .navbar .nav > li.active a {
-  color: #16a085;
+  color: #08435d;
 }
 .header-11 .navbar .nav > li:active a:hover,
 .header-11 .navbar .nav > li.active a:hover,
@@ -918,7 +919,7 @@ section * {
 .header-11 .navbar .nav > li.active a:focus,
 .header-11 .navbar .nav > li:active a.active,
 .header-11 .navbar .nav > li.active a.active {
-  color: #16a085;
+  color: #08435d;
 }
 .header-11 .navbar .nav > li > a {
   padding: 41px 0 27px;
@@ -932,7 +933,7 @@ section * {
 .header-11 .navbar .nav > li > a:hover,
 .header-11 .navbar .nav > li > a:focus,
 .header-11 .navbar .nav > li > a.active {
-  color: #16a085;
+  color: #08435d;
 }
 .header-11 .navbar .navbar-toggle {
   background-image: url("../../../common-files/icons/menu-icon-header-8.png");
@@ -1142,7 +1143,6 @@ section * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  border: 1px solid #ebedee;
   padding: 25px 5px 10px 5px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -1152,6 +1152,7 @@ section * {
   font-weight: normal;
   margin-bottom: 20px;
   background-color: white;
+  box-shadow: 1px 1px 4px 1px #dddddd;
 }
 .price-1 .plan > * {
   padding-left: 10px;
@@ -1611,8 +1612,32 @@ section * {
 }
 
 .heading {
-    border: 1px solid #e7e7e7;;
+    box-shadow: 1px 1px 3px 1px #ebedee;;
     background-color: white;
     padding: 15px 0px 15px 0px;
     margin-bottom: 30px
+}
+
+.second_line a {
+    color: #7f8c8d;
+}
+
+.post-button {
+    font-style: normal;
+    font-weight: 700;
+}
+
+.post-button-form {
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 15px 15px 15px 15px;
+}
+}
+
+.heading p {
+    font-size: 15px;
+    text-align: center;
 }

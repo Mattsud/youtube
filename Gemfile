@@ -64,9 +64,12 @@ gem 'devise'
 gem 'omniauth-google-oauth2', '~> 0.4.1'
 gem 'omniauth-facebook'
 
-#Security
+# Security
 gem 'figaro'
 
-#Model pictures
+# Model pictures
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
+
+# Form
+gem "simple_form"
