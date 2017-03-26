@@ -14,6 +14,7 @@ class VideosController < ApplicationController
 
  def create
     @new_video = Video.new(new_video_params)
+
     if @new_video.save
       redirect_to videos_path
     else
@@ -35,7 +36,9 @@ class VideosController < ApplicationController
                                   :channel,
                                   :photo,
                                   :link,
-                                  :user_id)
+                                  :user_id,
+                                  :is_published,
+                                  category_ids:[])
   end
 
 end

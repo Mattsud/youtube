@@ -14,9 +14,14 @@
               <%= simple_form_for @new_video do |f| %>
                 <%= f.input :title %>
                 <%= f.input :description, as: :text %>
-                <%= f.input :channel%>
+                <%= f.input :channel %>
+                <%= f.association :categories,
+                            as: :select,
+                            label: "Category",
+                            checked: Category.pluck(&:id) %>
+
                 <%= f.input :link %>
-                <%= f.hidden_field :user_id, value: current_user %>
+                <%= f.hidden_field :user_id, value: current_user.id %>
             </div>
           </div>
           <div class="post-button-form">

@@ -3,6 +3,8 @@ ActiveAdmin.register Video do
                 :description,
                 :photo,
                 :user_id,
+                :channel,
+                :is_published,
                 category_ids:[]
 
       form :html => { :enctype => "multipart/form-data" } do |f|
@@ -15,7 +17,9 @@ ActiveAdmin.register Video do
                             checked: Category.pluck(&:id)
       f.input :user_id, :label => 'User',
                         :as => :select,
-                        :collection => User.all.map{ |s| [ s.username, s.id ]}
+                        :collection => User.all.map{ |s| [ s.id ]}
+      f.input :is_published, :label => "Publié",
+                            as: :boolean
     end
     f.actions
   end

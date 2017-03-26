@@ -14,12 +14,26 @@
             <li><a href="#">BLOG</a></li>
             <li><a href="#">CONTACT</a></li>
           </ul>
-          <form class="navbar-form pull-left">
-            <%= link_to "LOG IN", new_user_registration_path, class:"btn btn-default btn-sm" %>
-            <%= link_to "SIGN UP", new_user_session_path, class:"btn btn-danger btn-sm" %>
-          </form>
+          <% if current_user == nil %>
+            <form class="navbar-form pull-left">
+              <%= link_to "LOG IN", new_user_session_path, class:"btn btn-default btn-sm" %>
+              <%= link_to "SIGN UP", new_user_registration_path, class:"btn btn-danger btn-sm" %>
+            </form>
+          <% else %>
+            <form class="navbar-form pull-left">
+              <%= link_to "MY PROFILE", edit_user_registration_path, class:"btn btn-default btn-sm" %>
+              <%= link_to "LOG OUT", destroy_user_session_path, :method => :delete, class:"btn btn-danger btn-sm" %>
+            </form>
+          <% end %>
+
         </div>
       </div>
     </div>
   </div>
 </header>
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
