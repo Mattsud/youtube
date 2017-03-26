@@ -6,6 +6,6 @@ class Video < ApplicationRecord
   has_many :categories, through: :video_categories
   has_many :video_categories
 
-  validates_presence_of :title, :description, :link
+  validates_presence_of :title, :description, :link, :channel, :user
   mount_uploader :photo, PhotoUploader
 end

@@ -24,13 +24,12 @@
               </div>
             </div>
             <div class="second_line col-xs-9">
-              <% video.categories.each do |category| %>
-                <ul>
-                  <li class="author"><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "category.title", category_path(category.id) %></li>
+              <ul>
+                <% video.categories.each do |category| %>
                   <li class="category"><i class="fa fa-tag" aria-hidden="true"></i> <%= link_to category.title, category_path(category.id) %></li>
-                  <li class="channel"><a href="ww.lol.com"><i class="fa fa-desktop" aria-hidden="true"></i> LOL Channel</a></li>
-                </ul>
-              <% end %>
+                <% end %>
+                <li class="channel"><a href="ww.lol.com"><i class="fa fa-desktop" aria-hidden="true"></i> LOL Channel</a></li>
+              </ul>
             </div>
             <div class="button">
               <a class="btn btn-default btn-sm" href="#">UPVOTE</a>

@@ -14,8 +14,9 @@
               <%= simple_form_for @new_video do |f| %>
                 <%= f.input :title %>
                 <%= f.input :description, as: :text %>
+                <%= f.input :channel%>
                 <%= f.input :link %>
-
+                <%= f.hidden_field :user_id, value: current_user %>
             </div>
           </div>
           <div class="post-button-form">

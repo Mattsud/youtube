@@ -1,0 +1,25 @@
+<section class="price-1">
+  <div class="container">
+    <h2>Log in</h2>
+    <div class="row plans">
+      <div class="col-xs-8 col-xs-offset-2">
+        <div class="plan">
+          <div class="first_line col-xs-12">
+            <div class="form_upload">
+              <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <%= f.input :email, required: false, autofocus: true %>
+                <%= f.input :password, required: false %>
+                <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+            </div>
+          </div>
+          <div class="post-button-form">
+            <%= f.button :submit, "Log in", class:"btn btn-default post-button-form" %><br>
+            <p class="text_form">Don't have an account ?</p>
+            <%= render "devise/shared/links" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

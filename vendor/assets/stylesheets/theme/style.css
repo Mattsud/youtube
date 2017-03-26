@@ -1641,3 +1641,15 @@ section * {
     font-size: 15px;
     text-align: center;
 }
+
+p.text_form {
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+a.password {
+    font-size: 13px;
+    margin-top: 20px;
+    float: left;
+  }

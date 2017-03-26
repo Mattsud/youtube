@@ -15,8 +15,8 @@
             <li><a href="#">CONTACT</a></li>
           </ul>
           <form class="navbar-form pull-left">
-            <a class="btn btn-default btn-sm" href="#">LOG IN</a>
-            <a class="btn btn-danger btn-sm" href="#">SIGN UP</a>
+            <%= link_to "LOG IN", new_user_registration_path, class:"btn btn-default btn-sm" %>
+            <%= link_to "SIGN UP", new_user_session_path, class:"btn btn-danger btn-sm" %>
           </form>
         </div>
       </div>
