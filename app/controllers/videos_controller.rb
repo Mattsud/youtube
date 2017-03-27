@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new, :upvote]
 
   def index
     @videos = Video.all
@@ -32,10 +32,16 @@ class VideosController < ApplicationController
   end
 
   def upvote
-  @video = Video.find(params[:id])
-  @video.upvote_by current_user
-  redirect_to videos_path, notice: "Your vote has been recorded"
-end
+    @video = Video.find(params[:id])
+    @video.liked_by current_user
+    redirect_to videos_path, notice: "Your upvote has been saved"
+  end
+
+  def downvote
+    @video = Video.find(params[:id])
+    @video.unliked_by current_user
+    redirect_to videos_path, notice: "Your upvote has been removed"
+  end
 
   private
 

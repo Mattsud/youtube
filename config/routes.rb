@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :videos do
     member do
       put "like", to: "videos#upvote"
+      put "dislike", to: "videos#downvote"
     end
   end
 
