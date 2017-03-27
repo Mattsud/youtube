@@ -32,7 +32,7 @@
               </ul>
             </div>
             <div class="button">
-              <a class="btn btn-default btn-sm" href="#">UPVOTE</a>
+              <%= link_to glyph(:'chevron-up') + "#{video.score}", like_video_path(video), method: :put, class: 'btn btn-default btn-sm' %>
             </div>
           </div>
         </div>

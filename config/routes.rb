@@ -6,4 +6,11 @@ Rails.application.routes.draw do
 
   resources :videos, only: [:index, :show, :new, :create]
   resources :categories, only: [:show]
+
+  resources :videos do
+    member do
+      put "like", to: "videos#upvote"
+    end
+  end
+
 end

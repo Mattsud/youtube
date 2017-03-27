@@ -1648,3 +1648,9 @@ a.password {
  .delete-button-form {
     margin-top: 25px;
   }
+
+  .fa-chevron-up {
+    margin-right: 10px;
+    font-size: 13px;
+    font-weight: 700;
+}

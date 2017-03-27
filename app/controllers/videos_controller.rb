@@ -31,6 +31,12 @@ class VideosController < ApplicationController
   def destroy
   end
 
+  def upvote
+  @video = Video.find(params[:id])
+  @video.upvote_by current_user
+  redirect_to videos_path, notice: "Your vote has been recorded"
+end
+
   private
 
   def new_video_params

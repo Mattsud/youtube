@@ -78,3 +78,6 @@ gem "simple_form"
 # Admin
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
+# Vote
+gem 'acts_as_votable'
