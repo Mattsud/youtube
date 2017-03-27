@@ -4,7 +4,7 @@ class VideosController < ApplicationController
   def index
     @videos = Video.all
     @videos_shown = @videos.where(is_published:true)
-                                  .order('created_at DESC')
+                                  .order(:cached_votes_up => :desc)
   end
 
   def show
@@ -49,7 +49,7 @@ class VideosController < ApplicationController
   def new_video_params
     params.require(:video).permit(:title,
                                   :channel,
-                                  :plateform,
+                                  :plateform_id,
                                   :photo,
                                   :photo_cache,
                                   :link,

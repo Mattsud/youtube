@@ -24,6 +24,22 @@ category_2 = Category.new(title:'Short Movie',
                           description: 'Short Movie bien bien Education bien bien Education bien bien Education bien bien Education bien bien Education bien bien')
 category_2.save!
 
+category_3 = Category.new(title:'Lifestyle / People',
+                          description: 'Education bien bien Education bien bien Education bien bien Education bien bien Education bien bien Education bien bien')
+category_3.save!
+
+category_4 = Category.new(title:'Comedy',
+                          description: 'Education bien bien Education bien bien Education bien bien Education bien bien Education bien bien Education bien bien')
+category_4.save!
+
+category_5 = Category.new(title:'Music',
+                          description: 'Education bien bien Education bien bien Education bien bien Education bien bien Education bien bien Education bien bien')
+category_5.save!
+
+category_5 = Category.new(title:'Other',
+                          description: 'Education bien bien Education bien bien Education bien bien Education bien bien Education bien bien Education bien bien')
+category_5.save!
+
 youtube = Plateform.new(title:"Youtube",
                         description: "Youtube est cool")
 url = "https://www.leriremedecin.org/images/template/youtube.png"

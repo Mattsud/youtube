@@ -1681,10 +1681,11 @@ li.plateform {
 }
 
 .second_line a {
-    color: #7f8c8d;
+    color: #525e5f;
     font-size: 16px;
     border: 1px solid #cccccc;
     padding: 8px;
+    background-color: #f5f5f5;
 }
 
 li.channel {

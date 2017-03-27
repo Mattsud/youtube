@@ -2,8 +2,9 @@
   <div class="container">
     <div class="heading">
       <h1>Rules before uploading</h1>
-      <p>Video from channel < 3000 subscribers
-        <br>Original content (no TV show re-upload)</p>
+      <p>Video from channel < 2500 subscribers
+        <br>Original content (no TV show re-upload)
+        <br>On Youtube or Facebook</p>
     </div>
     <h2>Upload the video</h2>
     <div class="row plans">
@@ -14,6 +15,7 @@
               <%= simple_form_for @new_video do |f| %>
                 <%= f.input :title %>
                 <%= f.input :channel, label: "Channel name" %>
+                <%= f.input :description, as: :text %>
                 <%= f.association :plateform,
                             as: :select,
                             label: "Plateform",
@@ -24,6 +26,9 @@
                             checked: Category.pluck(&:id) %>
 
                 <%= f.input :link, label: "Video's link" %>
+                <%= f.input :photo,
+                            as: :file,
+                            label: "Video's thumbnail" %>
                 <%= f.hidden_field :user_id, value: current_user.id %>
             </div>
           </div>

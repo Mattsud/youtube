@@ -28,16 +28,11 @@
             </div>
 
 
-
-
-
-
-
             <div class="button">
               <% if current_user == nil %>
                 <%= link_to glyph(:'chevron-up') + "#{video.score}", like_video_path(video), method: :put, class: 'btn btn-default btn-sm' %>
               <% elsif current_user.voted_for? video %>
-                <%= link_to glyph(:'chevron-down') + "#{video.score}", dislike_video_path(video), method: :put, class: 'btn btn-default btn-sm btn-voted' %>
+                <%= link_to glyph(:'chevron-up') + "#{video.score}", dislike_video_path(video), method: :put, class: 'btn btn-default btn-sm btn-voted' %>
               <% else %>
                 <%= link_to glyph(:'chevron-up') + "#{video.score}", like_video_path(video), method: :put, class: 'btn btn-default btn-sm' %>
               <% end %>
