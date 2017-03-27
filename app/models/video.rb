@@ -1,7 +1,7 @@
 class Video < ApplicationRecord
 
   has_one :user
-  has_one :plateform
+  belongs_to :plateform
   belongs_to :category
 
   validates_presence_of :category

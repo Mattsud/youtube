@@ -13,14 +13,17 @@
             <div class="form_upload">
               <%= simple_form_for @new_video do |f| %>
                 <%= f.input :title %>
-                <%= f.input :description, as: :text %>
-                <%= f.input :channel %>
+                <%= f.input :channel, label: "Channel name" %>
+                <%= f.association :plateform,
+                            as: :select,
+                            label: "Plateform",
+                            checked: Plateform.pluck(&:id) %>
                 <%= f.association :category,
                             as: :select,
                             label: "Category",
                             checked: Category.pluck(&:id) %>
 
-                <%= f.input :link %>
+                <%= f.input :link, label: "Video's link" %>
                 <%= f.hidden_field :user_id, value: current_user.id %>
             </div>
           </div>

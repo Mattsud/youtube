@@ -10,22 +10,29 @@
     <h2>Best videos of the day</h2>
     <div class="row plans">
       <% @videos_shown.each do |video| %>
-        <div class="col-xs-8 col-xs-offset-2">
+        <div class="center-block" style="width:650px;max-width:100%">
           <div class="plan">
             <div class="first_line col-xs-12">
-              <div class="image col-xs-12 col-sm-4">
-                <%= cl_image_tag video.photo, height: 130, width: 210, crop: :fill %>
+              <div class="image col-xs-12 col-sm-5">
+                <%= cl_image_tag video.photo, height: 260, width: 420, crop: :fill %>
               </div>
-              <div class="title col-xs-12 col-sm-8">
+              <div class="title col-xs-12 col-sm-7">
                 <%= link_to video.title, video_path(:show) %>
+                <div class="second_line col-xs-12">
+                  <ul>
+                    <li class="plateform"><%= cl_image_tag video.plateform.photo, height: 35, width: 35, crop: :fill %></li>
+                    <li class="category"></i> <%= link_to video.category.title, category_path(video.category.id) %></li>
+                  </ul>
+                </div>
               </div>
             </div>
-            <div class="second_line col-xs-9">
-              <ul>
-                <li class="category"><i class="fa fa-tag" aria-hidden="true"></i> <%= link_to video.category.title, category_path(video.category.id) %></li>
-                <li class="channel"><a href="ww.lol.com"><i class="fa fa-desktop" aria-hidden="true"></i> LOL Channel</a></li>
-              </ul>
-            </div>
+
+
+
+
+
+
+
             <div class="button">
               <% if current_user == nil %>
                 <%= link_to glyph(:'chevron-up') + "#{video.score}", like_video_path(video), method: :put, class: 'btn btn-default btn-sm' %>
