@@ -1,14 +1,14 @@
 ActiveAdmin.register Category do
   permit_params :title,
                 :description,
-                :photo
+                :logo
 
 
       form :html => { :enctype => "multipart/form-data" } do |f|
       f.inputs "Categories" do
       f.input :title
       f.input :description, :as => :text
-      f.input :photo, as: :file
+      f.input :logo, as: :file
 
     end
     f.actions

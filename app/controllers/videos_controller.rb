@@ -48,8 +48,8 @@ class VideosController < ApplicationController
 
   def new_video_params
     params.require(:video).permit(:title,
-                                  :description,
                                   :channel,
+                                  :plateform,
                                   :photo,
                                   :photo_cache,
                                   :link,
