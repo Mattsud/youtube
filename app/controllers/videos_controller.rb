@@ -3,6 +3,7 @@ class VideosController < ApplicationController
 
   def index
     @videos = Video.all
+    @videos_shown = @videos.where(is_published:true)
   end
 
   def show
@@ -14,6 +15,7 @@ class VideosController < ApplicationController
 
  def create
     @new_video = Video.new(new_video_params)
+    @new_video.photo ||= "/assets/images/maxresdefault.jpg"
 
     if @new_video.save
       redirect_to videos_path

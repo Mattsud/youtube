@@ -5,11 +5,11 @@
       <p>Helping Youtubers with less than 3000 subscribers
         <br>Share and vote for the best videos
       </p>
-      <p><%= link_to "Post a new video", new_video_path, :class => "btn btn-danger post-button" %></p>
+      <p><%= link_to "Post a new video", new_video_path, :class => "btn btn-primary post-button" %></p>
     </div>
     <h2>Best videos of the day</h2>
     <div class="row plans">
-      <% @videos.each do |video| %>
+      <% @videos_shown.each do |video| %>
         <div class="col-xs-8 col-xs-offset-2">
           <div class="plan">
             <div class="first_line col-xs-12">

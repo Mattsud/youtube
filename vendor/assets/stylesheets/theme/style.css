@@ -881,17 +881,7 @@ section * {
   padding-bottom: 5px;
   margin-right: 10px;
 }
-.header-11 .navbar .btn.btn-primary {
-  background-color: #16a085;
-}
-.header-11 .navbar .btn.btn-primary:hover,
-.header-11 .navbar .btn.btn-primary:focus {
-  background-color: #45b39d;
-}
-.header-11 .navbar .btn.btn-primary:active,
-.header-11 .navbar .btn.btn-primary.active {
-  background-color: #138871;
-}
+
 .header-11 .navbar .brand {
   padding-top: 30px;
   font-size: 25px;
@@ -1652,4 +1642,8 @@ a.password {
     font-size: 13px;
     margin-top: 20px;
     float: left;
+  }
+
+ .delete-button-form {
+    margin-top: 25px;
   }
