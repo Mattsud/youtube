@@ -2,6 +2,7 @@ ActiveAdmin.register Video do
   permit_params :title,
                 :description,
                 :photo,
+                :photo_cache,
                 :user_id,
                 :channel,
                 :is_published,
@@ -9,7 +10,7 @@ ActiveAdmin.register Video do
 
       form :html => { :enctype => "multipart/form-data" } do |f|
       f.inputs "Videos" do
-      f.input :picture, as: :file
+      f.input :photo, as: :file
       f.input :title, :label => "Titre de la vidéo"
       f.input :description, :as => :text
       f.input :categories, :label => "Catégorie de la vidéo",

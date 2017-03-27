@@ -4,6 +4,7 @@ class VideosController < ApplicationController
   def index
     @videos = Video.all
     @videos_shown = @videos.where(is_published:true)
+                                  .order('created_at DESC')
   end
 
   def show
@@ -15,10 +16,10 @@ class VideosController < ApplicationController
 
  def create
     @new_video = Video.new(new_video_params)
-    @new_video.photo ||= "/assets/images/maxresdefault.jpg"
+    @new_video.photo ||= "/assets/maxresdefault.jpg"
 
     if @new_video.save
-      redirect_to videos_path
+      redirect_to videos_path, notice: "Your video will be reviewed and posted soon"
     else
       render :new
     end
@@ -37,6 +38,7 @@ class VideosController < ApplicationController
                                   :description,
                                   :channel,
                                   :photo,
+                                  :photo_cache,
                                   :link,
                                   :user_id,
                                   :is_published,

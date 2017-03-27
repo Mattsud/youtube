@@ -8,5 +8,6 @@ class Video < ApplicationRecord
   validates_presence_of :categories
 
   validates_presence_of :title, :description, :link, :channel, :user_id
+
   mount_uploader :photo, PhotoUploader
 end
