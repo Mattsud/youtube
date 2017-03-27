@@ -1947,10 +1947,10 @@ output {
 }
 
 .form-control:focus {
-  border-color: #66afe9;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    border-color: #b1b1b1;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 0px rgba(0, 0, 0, 0.075), 0 0 5px rgba(152, 153, 154, 0.6);
+    box-shadow: inset 0 1px 0px rgba(0, 0, 0, 0.075), 0 0 8px rgb(197, 197, 197);
 }
 
 .form-control:-moz-placeholder {
@@ -5379,6 +5379,7 @@ a.thumbnail.active {
   color: #a94442;
   background-color: #f2dede;
   border-color: #ebccd1;
+  text-align: center;
 }
 
 .alert-danger hr {

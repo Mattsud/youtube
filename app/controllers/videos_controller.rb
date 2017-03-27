@@ -37,9 +37,6 @@ class VideosController < ApplicationController
     redirect_to videos_path, notice: "Your upvote has been saved"
   end
 
-  def liked
-
-  end
 
   def downvote
     @video = Video.find(params[:id])

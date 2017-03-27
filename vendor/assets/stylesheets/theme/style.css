@@ -541,7 +541,9 @@ input[type="color"],
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: normal;
-  color: #7f8c8d;
+  color: #2c3e50;
+  border-radius:0px;
+  border-color:#c7c6c6;
 }
 a:hover,
 button:hover,
@@ -1673,4 +1675,10 @@ a.password {
 
 .content {
     padding: 20px 50px 10px 50px;
+}
+
+.btn-voted{
+    color: #333333;
+    background-color: #ebebeb;
+    border-color: #adadad;
 }
