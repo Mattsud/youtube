@@ -54,7 +54,7 @@ class VideosController < ApplicationController
                                   :link,
                                   :user_id,
                                   :is_published,
-                                  category_ids:[])
+                                  :category_id)
   end
 
 end

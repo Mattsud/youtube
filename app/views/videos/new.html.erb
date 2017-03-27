@@ -15,7 +15,7 @@
                 <%= f.input :title %>
                 <%= f.input :description, as: :text %>
                 <%= f.input :channel %>
-                <%= f.association :categories,
+                <%= f.association :category,
                             as: :select,
                             label: "Category",
                             checked: Category.pluck(&:id) %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170327023102) do
+ActiveRecord::Schema.define(version: 20170327045123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,15 +54,6 @@ ActiveRecord::Schema.define(version: 20170327023102) do
     t.string   "photo"
   end
 
-  create_table "favorite_videos", force: :cascade do |t|
-    t.integer  "video_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_favorite_videos_on_user_id", using: :btree
-    t.index ["video_id"], name: "index_favorite_videos_on_video_id", using: :btree
-  end
-
   create_table "user_videos", force: :cascade do |t|
     t.integer  "video_id"
     t.integer  "user_id"
@@ -91,15 +82,6 @@ ActiveRecord::Schema.define(version: 20170327023102) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  create_table "video_categories", force: :cascade do |t|
-    t.integer  "video_id"
-    t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["category_id"], name: "index_video_categories_on_category_id", using: :btree
-    t.index ["video_id"], name: "index_video_categories_on_video_id", using: :btree
-  end
-
   create_table "videos", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -108,9 +90,10 @@ ActiveRecord::Schema.define(version: 20170327023102) do
     t.string   "photo"
     t.string   "link"
     t.string   "channel"
-    t.string   "link_channel"
     t.boolean  "is_published", default: false
     t.integer  "user_id"
+    t.integer  "category_id"
+    t.index ["category_id"], name: "index_videos_on_category_id", using: :btree
   end
 
   create_table "votes", force: :cascade do |t|
@@ -127,10 +110,6 @@ ActiveRecord::Schema.define(version: 20170327023102) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
   end
 
-  add_foreign_key "favorite_videos", "users"
-  add_foreign_key "favorite_videos", "videos"
   add_foreign_key "user_videos", "users"
   add_foreign_key "user_videos", "videos"
-  add_foreign_key "video_categories", "categories"
-  add_foreign_key "video_categories", "videos"
 end

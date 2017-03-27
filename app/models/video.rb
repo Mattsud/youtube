@@ -2,12 +2,11 @@ class Video < ApplicationRecord
 
   has_one :user_video
   has_one :user, through: :user_video
+  belongs_to :category
 
-  has_many :video_categories
-  has_many :categories, through: :video_categories
-  validates_presence_of :categories
+  validates_presence_of :category
 
-  validates_presence_of :title, :description, :link, :channel, :user_id
+  validates_presence_of :title, :description, :link, :channel
 
   mount_uploader :photo, PhotoUploader
   acts_as_votable

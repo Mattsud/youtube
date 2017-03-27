@@ -25,9 +25,7 @@
             </div>
             <div class="second_line col-xs-9">
               <ul>
-                <% video.categories.each do |category| %>
-                  <li class="category"><i class="fa fa-tag" aria-hidden="true"></i> <%= link_to category.title, category_path(category.id) %></li>
-                <% end %>
+                <li class="category"><i class="fa fa-tag" aria-hidden="true"></i> <%= link_to video.category.title, category_path(video.category.id) %></li>
                 <li class="channel"><a href="ww.lol.com"><i class="fa fa-desktop" aria-hidden="true"></i> LOL Channel</a></li>
               </ul>
             </div>
