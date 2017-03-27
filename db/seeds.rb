@@ -28,7 +28,8 @@ video_1 = Video.new(title: "1 - WOW! Is This Really Safe Or Fair? Controversial 
                     description: "Juke Dock & GurNav Production House Proudly Presents Blockbuster Song Music By SUKH-E MUZICAL DOCTORZ And Lyrics By JAANI . Starring MONICA GILL, The",
                     link: 'https://www.youtube.com/watch?v=YddFGq8cNes',
                     channel: 'lol',
-                    category_id:1)
+                    category_id:1,
+                    user_id:1)
 
 url = "https://i.ytimg.com/vi/Z0X2FyRl-9s/maxresdefault.jpg"
 video_1.remote_photo_url = url
@@ -38,7 +39,8 @@ video_2 = Video.new(title: "2 - WOW! Is This Really Safe Or Fair? Controversial 
                     description: "Presents Blockbuster Song Music By SUKH-E MUZICAL DOCTORZ And Lyrics By JAANI . Starring MONICA GILL, The",
                     link: 'https://www.youtube.com/watch?v=YddFGq8cNes',
                     channel: 'lol',
-                    category_id:1)
+                    category_id:1,
+                    user_id:1)
 
 url = "https://i.ytimg.com/vi/Z0X2FyRl-9s/maxresdefault.jpg"
 video_2.remote_photo_url = url
@@ -48,7 +50,8 @@ video_3 = Video.new(title: "3 - WOW! Is This Really Safe Or Fair? Controversial 
                     description: "Juke Dock & GurNav Production House Proudly Presents Blockbuster. Starring MONICA GILL, The",
                     link: 'https://www.youtube.com/watch?v=YddFGq8cNes',
                     channel: 'lol',
-                    category_id:2)
+                    category_id:2,
+                    user_id:2)
 
 url = "https://i.ytimg.com/vi/Z0X2FyRl-9s/maxresdefault.jpg"
 video_3.remote_photo_url = url
@@ -58,20 +61,9 @@ video_4 = Video.new(title: "4 - WOW! Is This Really Safe Or Fair? Controversial 
                     description: "Juke Dock & GurNav Production House Proudly Presents Blockbuster Song Music The",
                     link: 'https://www.youtube.com/watch?v=YddFGq8cNes',
                     channel: 'lol',
-                    category_id:2)
+                    category_id:2,
+                    user_id:2)
 
 url = "https://i.ytimg.com/vi/Z0X2FyRl-9s/maxresdefault.jpg"
 video_4.remote_photo_url = url
 video_4.save!
-
-user_video_1 = UserVideo.new(user_id:1, video_id:1)
-user_video_1.save!
-
-user_video_2 = UserVideo.new(user_id:1, video_id:2)
-user_video_2.save!
-
-user_video_3 = UserVideo.new(user_id:1, video_id:3)
-user_video_3.save!
-
-user_video_4 = UserVideo.new(user_id:2, video_id:4)
-user_video_4.save!

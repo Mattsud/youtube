@@ -54,15 +54,6 @@ ActiveRecord::Schema.define(version: 20170327045123) do
     t.string   "photo"
   end
 
-  create_table "user_videos", force: :cascade do |t|
-    t.integer  "video_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_user_videos_on_user_id", using: :btree
-    t.index ["video_id"], name: "index_user_videos_on_video_id", using: :btree
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -110,6 +101,4 @@ ActiveRecord::Schema.define(version: 20170327045123) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
   end
 
-  add_foreign_key "user_videos", "users"
-  add_foreign_key "user_videos", "videos"
 end
