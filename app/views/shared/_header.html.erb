@@ -4,15 +4,13 @@
       <div class="navbar col-sm-12" role="navigation">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle"></button>
-          <a class="brand" href="#"><img src="img/logo@2x.png" width="50" height="50" alt="">RisingTube</a>
+          <%= link_to "RisingTube", root_path, class:"brand" %>
         </div>
         <div class="collapse navbar-collapse pull-right">
           <ul class="nav pull-left">
-            <li class="active"><a href="#">HOME</a></li>
-            <li><a href="#">COMPANY</a></li>
-            <li><a href="#">PORTFOLIO</a></li>
-            <li><a href="#">BLOG</a></li>
-            <li><a href="#">CONTACT</a></li>
+            <li><a href="/pages/concept">THE CONCEPT</a></li>
+            <li><a href="/pages/blog">BLOG</a></li>
+            <li><a href="/pages/contact">CONTACT</a></li>
           </ul>
           <% if current_user == nil %>
             <form class="navbar-form pull-left">
@@ -22,7 +20,7 @@
           <% else %>
             <form class="navbar-form pull-left">
               <%= link_to "POST A VIDEO", new_video_path, class:"btn btn-primary btn-sm" %>
-              <%= link_to "MY PROFILE", edit_user_registration_path, class:"btn btn-default btn-sm" %>
+              <%= link_to "MY PROFILE", user_path(current_user), class:"btn btn-default btn-sm" %>
               <%= link_to "LOG OUT", destroy_user_session_path, :method => :delete, class:"btn btn-danger btn-sm" %>
             </form>
           <% end %>

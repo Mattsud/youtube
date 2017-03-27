@@ -912,13 +912,12 @@ section * {
   color: #08435d;
 }
 .header-11 .navbar .nav > li > a {
-  padding: 41px 0 27px;
-  font-size: 14px;
-  font-weight: normal;
-  color: #7f8c8d;
-  font-weight: 500;
-  letter-spacing: 1px;
-  color: inherit;
+    padding: 41px 0 27px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #2c3e50;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 .header-11 .navbar .nav > li > a:hover,
 .header-11 .navbar .nav > li > a:focus,
@@ -1605,7 +1604,7 @@ section * {
 .heading {
     box-shadow: 1px 1px 3px 1px #ebedee;;
     background-color: white;
-    padding: 15px 0px 15px 0px;
+    padding: 5px 0px 20px 0px;
     margin-bottom: 30px
 }
 
@@ -1659,4 +1658,19 @@ a.password {
     margin-right: 10px;
     font-size: 13px;
     font-weight: 700;
+}
+
+.account_buttons p {
+    display: inline;
+    text-align: center;
+    padding: 5px 5px;
+}
+
+.account_buttons {
+    text-align: center;
+    padding: 8px;
+}
+
+.content {
+    padding: 20px 50px 10px 50px;
 }

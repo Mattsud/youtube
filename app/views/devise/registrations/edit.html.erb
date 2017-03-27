@@ -1,6 +1,13 @@
 <section class="price-1">
   <div class="container">
-    <h2>Upload the video</h2>
+    <div class="heading">
+      <h1>Manage your account</h1>
+      <div class="account_buttons">
+        <p><%= link_to "Favorite videos", user_path(current_user), :class => "btn btn-success post-button" %></p>
+        <p><%= link_to "Profile update", edit_user_registration_path, :class => "btn btn-default post-button" %></p>
+      </div>
+    </div>
+    <h2>Profile</h2>
     <div class="row plans">
       <div class="col-xs-8 col-xs-offset-2">
         <div class="plan">
@@ -30,5 +37,3 @@
     </div>
   </div>
 </section>
-
-<%= current_user.find_voted_items %>

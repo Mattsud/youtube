@@ -1,0 +1,44 @@
+<section class="price-1">
+  <div class="container">
+    <div class="heading">
+      <h1>Manage your account</h1>
+      <div class="account_buttons">
+        <p><%= link_to "Favorite videos", user_path(current_user), :class => "btn btn-success post-button" %></p>
+        <p><%= link_to "Profile update", edit_user_registration_path, :class => "btn btn-default post-button" %></p>
+      </div>
+    </div>
+    <h2>Favorite videos</h2>
+    <div class="row plans">
+      <% @favorite_videos.each do |video| %>
+        <div class="col-xs-8 col-xs-offset-2">
+          <div class="plan">
+            <div class="first_line col-xs-12">
+              <div class="image col-xs-12 col-sm-4">
+                <%= cl_image_tag video.photo, height: 130, width: 210, crop: :fill %>
+              </div>
+              <div class="title col-xs-12 col-sm-8">
+                <%= link_to video.title, video_path(:show) %>
+              </div>
+              <div class="description">
+                <%= video.description %>
+              </div>
+            </div>
+            <div class="second_line col-xs-9">
+              <ul>
+                <li class="category"><i class="fa fa-tag" aria-hidden="true"></i> <%= link_to video.category.title, category_path(video.category.id) %></li>
+                <li class="channel"><a href="ww.lol.com"><i class="fa fa-desktop" aria-hidden="true"></i> LOL Channel</a></li>
+              </ul>
+            </div>
+            <div class="button">
+              <% if current_user == nil or current_user.voted_for? video %>
+                <%= link_to glyph(:'chevron-down') + "#{video.score}", dislike_video_path(video), method: :put, class: 'btn btn-default btn-sm' %>
+              <% else %>
+                <%= link_to glyph(:'chevron-up') + "#{video.score}", like_video_path(video), method: :put, class: 'btn btn-default btn-sm' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
