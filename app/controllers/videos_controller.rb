@@ -55,7 +55,7 @@ class VideosController < ApplicationController
   private
 
   def allow_youtube_iframe
-    response.headers['X-Frame-Options'] = 'ALLOW-FROM https://www.youtube.com'
+    response.headers.except! 'X-Frame-Options'
   end
 
   def new_video_params
