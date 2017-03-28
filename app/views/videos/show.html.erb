@@ -10,7 +10,7 @@
       <div class="informations">
         <ul>
           <li class="posted">Posted the <%= @video.created_at.strftime("%d/%m/%Y") %></li>
-          <li class="category-video"> <%= @video.category.title %> </li>
+          <li class="category-video"><a href="#"> <%= @video.category.title %></a> </li>
         </ul>
         <p class="description"><%= @video.description %> </p>
       </div>

@@ -21,7 +21,7 @@
                 <div class="second_line col-xs-12">
                   <ul>
                     <li class="plateform"><%= cl_image_tag video.plateform.photo, height: 35, width: 35, crop: :fill %></li>
-                    <li class="category"></i> <%= link_to video.category.title, category_path(video.category.id) %></li>
+                    <li class="category"></i><a href="#"> <%= video.category.title %> </a></li>
                   </ul>
                 </div>
               </div>
