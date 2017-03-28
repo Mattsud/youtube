@@ -56,8 +56,9 @@ Rails.application.configure do
   #Defaut utl options Devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
- config.action_dispatch.default_headers.merge!({'X-Frame-Options' => 'ALLOWALL'})
-
+config.action_dispatch.default_headers = {
+    'X-Frame-Options' => 'ALLOWALL'
+  }
 
 
 end
