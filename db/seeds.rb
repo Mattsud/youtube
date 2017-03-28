@@ -47,8 +47,8 @@ youtube.remote_photo_url = url
 youtube.save!
 
 facebook = Plateform.new(title:"Facebook",
-                        description: "Youtube est cool")
-url = "https://www.leriremedecin.org/images/template/youtube.png"
+                        description: "Facebook est cool")
+url = "https://photos.smugmug.com/Other/Bouton/i-FP7f368/0/S/facebook-logo-rond-S.png"
 facebook.remote_photo_url = url
 facebook.save!
 

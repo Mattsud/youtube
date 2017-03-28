@@ -18,7 +18,7 @@ ActiveAdmin.register Video do
       f.input :plateform
       f.input :link
       f.input :category, :label => "Catégorie de la vidéo",
-                            as: :check_boxes,
+                            as: :select,
                             checked: Category.pluck(&:id)
       f.input :user_id, :label => 'User',
                         :as => :select,
