@@ -27,7 +27,7 @@
                             checked: Category.pluck(&:id) %>
 
                 <%= f.input :link, label: "Video's link",
-                                   hint: 'Example : https://www.youtube.com/watch?v=g-jwWYX7Jlo' %>
+                                   hint: 'This format : https://www.youtube.com/watch?v=g-jwWYX7Jlo or https://www.facebook.com/6abcActionNews/videos/10154526374406378/' %>
                 <%= f.input :photo,
                             as: :file,
                             label: "Video's thumbnail" %>

@@ -927,7 +927,7 @@ section * {
   color: #08435d;
 }
 .header-11 .navbar .navbar-toggle {
-  background-image: url("../../../common-files/icons/menu-icon-header-8.png");
+  background-image: asset-data-url("menu-icon-header-8.png");
   margin-top: 36px;
 }
 .header-11-sub {
@@ -1606,7 +1606,6 @@ section * {
     font-size: 20px;
     padding: 15px 15px 15px 15px;
 }
-}
 
 .heading p {
     font-size: 15px;
@@ -1701,4 +1700,27 @@ li.category {
 
 .second_line ul {
     display: inline;
+}
+
+.heading-video {
+    box-shadow: 1px 1px 3px 1px #ebedee;
+    background-color: white;
+    padding: 5px 0px 20px 0px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.heading-video iframe {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+p.description {
+    padding: 10px 30px 10px 30px;
+}
+
+.informations li {
+    list-style: none;
+    color: #34495e;
+    font-size: 14px;
 }

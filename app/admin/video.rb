@@ -1,5 +1,6 @@
 ActiveAdmin.register Video do
   permit_params :title,
+                :description,
                 :plateform,
                 :photo,
                 :photo_cache,
@@ -13,6 +14,7 @@ ActiveAdmin.register Video do
       f.inputs "Videos" do
       f.input :photo, as: :file
       f.input :title, :label => "Titre de la vidéo"
+      f.input :description, as: :text
       f.input :plateform
       f.input :link
       f.input :category, :label => "Catégorie de la vidéo",

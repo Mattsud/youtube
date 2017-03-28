@@ -1,12 +1,19 @@
 <section class="price-1">
   <div class="container">
-    <div class="heading">
+    <div class="heading-video">
       <h1><%= @video.title %></h1>
       <% if @video.plateform.title == 'Youtube' %>
         <p><iframe width="560" height="315" src="<%= @video.link %>" frameborder="0" allowfullscreen></iframe></p>
+      <% else %>
+      <iframe src="https://www.facebook.com/plugins/video.php?href=<%= @video.link %>&show_text=1&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
       <% end %>
-
-      <p>Informations</p>
+      <div class="informations">
+        <ul>
+          <li class="posted">Posted the <%= @video.created_at.strftime("%d/%m/%Y") %></li>
+          <li class="category-video"> <%= @video.category.title %> </li>
+        </ul>
+        <p class="description"><%= @video.description %> </p>
+      </div>
     </div>
     <h2>Comments</h2>
     <div class="row plans">

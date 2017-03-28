@@ -10,6 +10,7 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find(params[:id])
+    @video_date = @video.created_at
   end
 
   def new
@@ -18,7 +19,12 @@ class VideosController < ApplicationController
 
  def create
     @new_video = Video.new(new_video_params)
-    @new_video.link.gsub! '/watch?v=', '/embed/'
+
+    if @new_video.plateform.title == "youtube"
+      @new_video.link.gsub! '/watch?v=', '/embed/'
+    else
+      @new_video.link.gsub!(':' => '%3A', '/' => '%2F')
+    end
 
     if @new_video.save
       redirect_to videos_path, notice: "Your video will be reviewed and posted soon"
