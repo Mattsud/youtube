@@ -4,6 +4,7 @@
       <h1>Rules before uploading</h1>
       <p>Video from channel < 2500 subscribers
         <br>Original content (no TV show re-upload)
+        <br>One video per user or channel / Day
         <br>On Youtube or Facebook</p>
     </div>
     <h2>Upload the video</h2>
@@ -25,7 +26,8 @@
                             label: "Category",
                             checked: Category.pluck(&:id) %>
 
-                <%= f.input :link, label: "Video's link" %>
+                <%= f.input :link, label: "Video's link",
+                                   hint: 'Example : https://www.youtube.com/watch?v=g-jwWYX7Jlo' %>
                 <%= f.input :photo,
                             as: :file,
                             label: "Video's thumbnail" %>

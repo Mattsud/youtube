@@ -1,5 +1,6 @@
 class VideosController < ApplicationController
   before_action :authenticate_user!, only: [:new, :upvote]
+  after_action :allow_youtube_iframe
 
   def index
     @videos = Video.all
@@ -8,6 +9,7 @@ class VideosController < ApplicationController
   end
 
   def show
+    @video = Video.find(params[:id])
   end
 
   def new
@@ -16,7 +18,7 @@ class VideosController < ApplicationController
 
  def create
     @new_video = Video.new(new_video_params)
-    @new_video.photo ||= "/assets/maxresdefault.jpg"
+    @new_video.link.gsub! '/watch?v=', '/embed/'
 
     if @new_video.save
       redirect_to videos_path, notice: "Your video will be reviewed and posted soon"
@@ -45,6 +47,10 @@ class VideosController < ApplicationController
   end
 
   private
+
+  def allow_youtube_iframe
+    response.headers['X-Frame-Options'] = 'ALLOW-FROM https://www.youtube.com'
+  end
 
   def new_video_params
     params.require(:video).permit(:title,

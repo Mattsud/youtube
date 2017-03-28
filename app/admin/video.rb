@@ -4,6 +4,7 @@ ActiveAdmin.register Video do
                 :photo,
                 :photo_cache,
                 :user_id,
+                :link,
                 :channel,
                 :is_published,
                 :category_id
@@ -13,6 +14,7 @@ ActiveAdmin.register Video do
       f.input :photo, as: :file
       f.input :title, :label => "Titre de la vidéo"
       f.input :plateform
+      f.input :link
       f.input :category, :label => "Catégorie de la vidéo",
                             as: :check_boxes,
                             checked: Category.pluck(&:id)
