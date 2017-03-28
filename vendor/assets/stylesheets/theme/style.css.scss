@@ -1707,7 +1707,7 @@ li.category {
 .heading-video {
     box-shadow: 1px 1px 3px 1px #ebedee;
     background-color: white;
-    padding: 5px 0px 20px 0px;
+    padding: 5px 20px 20px 20px;
     margin-bottom: 30px;
     text-align: center;
 }
@@ -1725,4 +1725,22 @@ p.description {
     list-style: none;
     color: #34495e;
     font-size: 14px;
+}
+
+.videowrapper {
+    float: none;
+    clear: both;
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+
+.videowrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
