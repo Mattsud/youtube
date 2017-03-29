@@ -56,9 +56,9 @@ facebook.save!
 
 video_1 = Video.new(title: "1 - WOW! Is This Really Safe Or Fair? Controversial Win Sparks International Debate",
                     link: 'https://www.youtube.com/embed/YddFGq8cNes',
-                    channel: 'lol',
                     plateform_id:1,
                     category_id:1,
+                    is_published:true,
                     user_id:1)
 
 url = "https://i.ytimg.com/vi/Z0X2FyRl-9s/maxresdefault.jpg"
@@ -67,8 +67,8 @@ video_1.save!
 
 video_2 = Video.new(title: "2 - WOW! Is This Really Safe Or Fair? Controversial Win Sparks Debate",
                     link: 'https://www.youtube.com/embed/YddFGq8cNes',
-                    channel: 'lol',
                     plateform_id:1,
+                    is_published:true,
                     category_id:1,
                     user_id:1)
 
@@ -78,8 +78,8 @@ video_2.save!
 
 video_3 = Video.new(title: "3 - WOW! Is This Really Safe Or Fair? Controversial Win Sparks International Debate Sparks International Debate",
                     link: 'https%3A%2F%2Fwww.facebook.com%2F6abcActionNews%2Fvideos%2F10154526374406378%2F',
-                    channel: 'lol',
                     category_id:2,
+                    is_published:true,
                     plateform_id:2,
                     user_id:2)
 
@@ -89,8 +89,8 @@ video_3.save!
 
 video_4 = Video.new(title: "4 - WOW! Is This Really Safe Or Fair? Controversial International Debate",
                     link: 'https%3A%2F%2Fwww.facebook.com%2F6abcActionNews%2Fvideos%2F10154526374406378%2F',
-                    channel: 'lol',
                     category_id:2,
+                    is_published:true,
                     plateform_id:2,
                     user_id:2)
 

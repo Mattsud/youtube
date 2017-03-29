@@ -15,8 +15,6 @@
             <div class="form_upload">
               <%= simple_form_for @new_video do |f| %>
                 <%= f.input :title, required: true %>
-                <%= f.input :channel, required: true, label: "Channel name" %>
-                <%= f.input :description, as: :text %>
                 <%= f.association :plateform,
                             required: true,
                             as: :select,

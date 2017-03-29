@@ -5,8 +5,7 @@ class Video < ApplicationRecord
   belongs_to :category
 
   validates_presence_of :category
-
-  validates_presence_of :title, :link, :channel, :user_id, :plateform_id, :category_id
+  validates_presence_of :title, :link, :user_id, :plateform_id, :category_id
 
   mount_uploader :photo, PhotoUploader
   acts_as_votable

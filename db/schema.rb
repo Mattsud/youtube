@@ -86,12 +86,10 @@ ActiveRecord::Schema.define(version: 20170329030718) do
 
   create_table "videos", force: :cascade do |t|
     t.string   "title"
-    t.text     "description"
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
     t.string   "photo"
     t.string   "link"
-    t.string   "channel"
     t.boolean  "is_published",            default: false
     t.integer  "user_id"
     t.integer  "category_id"
