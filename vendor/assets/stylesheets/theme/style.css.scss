@@ -601,7 +601,9 @@ button:active {
   line-height: 22px;
   padding-top: 3px;
   padding-bottom: 3px;
+  margin-top: 10px;
 }
+
 .navbar .nav > li > a > [class*="fui-"] {
   font-size: 24px;
   margin: -10px 0 0;
@@ -623,9 +625,7 @@ button:active {
   margin: 0 auto;
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .navbar-collapse.collapse {
-    display: none !important;
-  }
+
   .navbar-toggle {
     display: block;
   }
@@ -633,6 +633,13 @@ button:active {
     float: none;
   }
 }
+
+@media (max-width: 991px) {
+.nav.pull-left {
+    float: none !important;
+}
+}
+
 .header-19 .navbar-collapse.collapse,
 .header-16 .navbar-collapse.collapse {
   display: none !important;
@@ -640,19 +647,39 @@ button:active {
 @media (max-width: 991px) {
   body .navbar-collapse {
     width: 230px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    height: 100% !important;
+    position: absolute;
+    top: 75px;
+    right: 15px;
+    bottom: auto;
+    height: auto !important;
     z-index: 1;
+    background: #fff;
+    box-shadow: 1px 1px 3px 1px #ebedee;
+    display: none;
   }
 }
+
+@media (min-width: 768px) {
+.navbar-collapse.collapse {
+    height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+  }
+}
+
 @media (min-width: 992px) {
   body > .collapse.navbar-collapse {
     display: none !important;
   }
 }
+
+@media (max-width: 991px) {
+.header-11 .navbar .nav > li > a {
+    padding: 15px 20px !important;
+  }
+}
+
+
 body .navbar-collapse#header-19,
 body .navbar-collapse#header-16 {
   width: 230px;
@@ -872,9 +899,19 @@ section * {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
 .header-11 .navbar .navbar-form {
-  padding: 30px 0 19px 30px;
+  padding: 20px 10px 5px 25px;
+  text-align: center;
 }
+
+@media (max-width: 991px) {
+.header-11 .navbar .navbar-form {
+  padding: 0px 10px 5px 25px;
+  text-align: center;
+}
+}
+
 .header-11 .navbar .btn {
   padding-left: 10px;
   padding-right: 10px;
@@ -899,7 +936,6 @@ section * {
   margin-left: 25px;
 }
 .header-11 .navbar .nav > li:first-child {
-  margin-left: 0;
 }
 .header-11 .navbar .nav > li:active a,
 .header-11 .navbar .nav > li.active a {
