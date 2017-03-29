@@ -10,10 +10,12 @@
                 <%= f.input :login, required: false, autofocus: true %>
                 <%= f.input :password, required: false %>
                 <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                <p class="post-button-form">
+                  <%= f.button :submit, "Login", class:"btn btn-default post-button-form" %>
+                </p>
             </div>
           </div>
           <div class="post-button-form">
-            <%= f.button :submit, "Log in", class:"btn btn-default post-button-form" %><br>
             <p class="text_form">Don't have an account ?</p>
             <%= render "devise/shared/links" %>
           </div>

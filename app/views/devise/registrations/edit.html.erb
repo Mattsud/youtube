@@ -40,10 +40,10 @@
                 <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %><br>
                 <%= f.input :password_confirmation, required: false %><br>
                 <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %><br>
+                 <p class="post-button-form">
+                  <%= f.button :submit, "Update", class:"btn btn-success btn btn-success post-button-form" %>
+                </p>
             </div>
-          </div>
-          <div class="post-button-form">
-            <%= f.button :submit, "Update", class:"btn btn-success btn btn-success post-button-form" %>
           </div>
           <div class="delete-button-form">
             <p> or </p>

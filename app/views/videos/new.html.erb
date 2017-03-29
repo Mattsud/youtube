@@ -14,29 +14,39 @@
           <div class="first_line col-xs-12">
             <div class="form_upload">
               <%= simple_form_for @new_video do |f| %>
-                <%= f.input :title %>
-                <%= f.input :channel, label: "Channel name" %>
+                <%= f.input :title, required: true %>
+                <%= f.input :channel, required: true, label: "Channel name" %>
                 <%= f.input :description, as: :text %>
                 <%= f.association :plateform,
+                            required: true,
                             as: :select,
                             label: "Plateform",
                             checked: Plateform.pluck(&:id) %>
                 <%= f.association :category,
                             as: :select,
+                            required: true,
                             label: "Category",
                             checked: Category.pluck(&:id) %>
 
-                <%= f.input :link, label: "Video's link",
-                                   hint: 'This format : https://www.youtube.com/watch?v=g-jwWYX7Jlo or https://www.facebook.com/6abcActionNews/videos/10154526374406378/' %>
+                <%= f.input :link,
+                            label: "Video's link",
+                            required: true,
+                            hint: 'This format : https://www.youtube.com/watch?v=g-jwJlo or https://www.facebook.com/page/videos/10154526/' %>
+
                 <%= f.input :photo,
                             as: :file,
                             label: "Video's thumbnail" %>
                 <%= f.hidden_field :user_id, value: current_user.id %>
+                <p class="post-button-form">
+                  <%= f.button :submit, "Submit", class:"btn btn-danger post-button-form" %>
+                </p>
             </div>
           </div>
-          <div class="post-button-form">
-           <%= f.button :submit, "Submit", class:"btn btn-danger post-button-form" %>
-          </div>
+
+            <p class="review-video">
+              Your video will be reviewed before publising
+            </p>
+
           <% end %>
         </div>
       </div>

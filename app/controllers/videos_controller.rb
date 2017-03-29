@@ -20,10 +20,12 @@ class VideosController < ApplicationController
  def create
     @new_video = Video.new(new_video_params)
 
-    if @new_video.plateform.title == "youtube"
-      @new_video.link.gsub! '/watch?v=', '/embed/'
-    else
-      @new_video.link.gsub!(':' => '%3A', '/' => '%2F')
+    unless @new_video.plateform == nil
+      if @new_video.plateform.title == "youtube"
+        @new_video.link.gsub! '/watch?v=', '/embed/'
+      else
+        @new_video.link.gsub!(':' => '%3A', '/' => '%2F')
+      end
     end
 
     if @new_video.save
