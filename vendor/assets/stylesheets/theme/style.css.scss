@@ -909,7 +909,7 @@ section * {
 .header-11 .navbar .navbar-form {
   padding: 0px 10px 5px 25px;
   text-align: center;
-}
+  }
 }
 
 .header-11 .navbar .btn {
@@ -962,6 +962,13 @@ section * {
 .header-11 .navbar .nav > li > a.active {
   color: #08435d;
 }
+
+@media (max-width: 991px) and (min-width: 768px) {
+.navbar-toggle {
+    display: block;
+  }
+}
+
 .header-11 .navbar .navbar-toggle {
   background-image: asset-data-url("menu-icon-header-8.png");
   margin-top: 36px;
