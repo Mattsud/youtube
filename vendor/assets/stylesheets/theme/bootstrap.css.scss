@@ -4413,13 +4413,19 @@ textarea.input-group-sm > .input-group-btn > .btn {
   overflow-y: auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 991px) {
   .navbar-collapse {
     width: auto;
     border-top: 0;
     box-shadow: none;
   }
 
+  .navbar-collapse.collapse {
+    display: block !important;
+    height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+  }
   .navbar-collapse.in {
     overflow-y: visible;
   }
