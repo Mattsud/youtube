@@ -9,6 +9,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   mount_uploader :photo, PhotoUploader
+  mount_uploader :avatar, AvatarUploader
   acts_as_voter
 
   validate :validate_username
