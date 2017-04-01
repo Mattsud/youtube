@@ -48,14 +48,8 @@ url = "https://www.leriremedecin.org/images/template/youtube.png"
 youtube.remote_photo_url = url
 youtube.save!
 
-facebook = Plateform.new(title:"Facebook",
-                        description: "Facebook est cool")
-url = "https://photos.smugmug.com/Other/Bouton/i-FP7f368/0/S/facebook-logo-rond-S.png"
-facebook.remote_photo_url = url
-facebook.save!
-
 video_1 = Video.new(title: "1 - WOW! Is This Really Safe Or Fair? Controversial Win Sparks International Debate",
-                    link: 'https://www.youtube.com/embed/YddFGq8cNes',
+                    link: 'https://www.youtube.com/watch?v=m9h7qCdgPN4',
                     plateform_id:1,
                     category_id:1,
                     is_published:true,
@@ -66,7 +60,7 @@ video_1.remote_photo_url = url
 video_1.save!
 
 video_2 = Video.new(title: "2 - WOW! Is This Really Safe Or Fair? Controversial Win Sparks Debate",
-                    link: 'https://www.youtube.com/embed/YddFGq8cNes',
+                    link: 'https://www.youtube.com/watch?v=m9h7qCdgPN4',
                     plateform_id:1,
                     is_published:true,
                     category_id:1,
@@ -77,10 +71,10 @@ video_2.remote_photo_url = url
 video_2.save!
 
 video_3 = Video.new(title: "3 - WOW! Is This Really Safe Or Fair? Controversial Win Sparks International Debate Sparks International Debate",
-                    link: 'https%3A%2F%2Fwww.facebook.com%2F6abcActionNews%2Fvideos%2F10154526374406378%2F',
+                    link: 'https://www.youtube.com/watch?v=m9h7qCdgPN4',
                     category_id:2,
                     is_published:true,
-                    plateform_id:2,
+                    plateform_id:1,
                     user_id:2)
 
 url = "https://i.ytimg.com/vi/Z0X2FyRl-9s/maxresdefault.jpg"
@@ -88,10 +82,10 @@ video_3.remote_photo_url = url
 video_3.save!
 
 video_4 = Video.new(title: "4 - WOW! Is This Really Safe Or Fair? Controversial International Debate",
-                    link: 'https%3A%2F%2Fwww.facebook.com%2F6abcActionNews%2Fvideos%2F10154526374406378%2F',
+                    link: 'https://www.youtube.com/watch?v=m9h7qCdgPN4',
                     category_id:2,
                     is_published:true,
-                    plateform_id:2,
+                    plateform_id:1,
                     user_id:2)
 
 url = "https://i.ytimg.com/vi/Z0X2FyRl-9s/maxresdefault.jpg"

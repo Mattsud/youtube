@@ -106,7 +106,7 @@ ActiveRecord::Schema.define(version: 20170401162332) do
     t.integer  "channel_subscribers"
     t.text     "description"
     t.integer  "view_count"
-    t.string   "lenght"
+    t.string   "length"
     t.string   "embed_code"
     t.index ["cached_votes_down"], name: "index_videos_on_cached_votes_down", using: :btree
     t.index ["cached_votes_score"], name: "index_videos_on_cached_votes_score", using: :btree
