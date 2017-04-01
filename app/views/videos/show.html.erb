@@ -3,7 +3,9 @@
     <div class="heading-video">
       <div class="center-block" style="width:800px;max-width:100%">
         <h1><%= @video.title %></h1>
-          <div class="videowrapper"></div>
+          <div class="videowrapper">
+            <%= @video.embed_code.html_safe %>
+          </div>
           <div class="informations"></div>
           <ul>
             <li class="posted">Posted the <%= @video.created_at.strftime("%d/%m/%Y") %></li>

@@ -7,5 +7,6 @@ class AddParametersToVideo < ActiveRecord::Migration[5.0]
     add_column :videos, :view_count, :integer
     add_column :videos, :length, :string
     add_column :videos, :embed_code, :string
+    add_column :videos, :channel_thumbnail, :string
   end
 end

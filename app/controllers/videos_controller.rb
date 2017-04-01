@@ -51,6 +51,7 @@ class VideosController < ApplicationController
     @channel_id = video.channel_id
     channel = Yt::Channel.new id:@channel_id
     @new_video.channel_subscribers = channel.subscriber_count
+    @new_video.channel_thumbnail = channel.thumbnail_url
   end
 
   def edit
