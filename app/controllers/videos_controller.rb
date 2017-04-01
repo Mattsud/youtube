@@ -90,6 +90,7 @@ class VideosController < ApplicationController
                                   :embed_code,
                                   :channel_title,
                                   :channel_subscribers,
+                                  :channel_thumbnail,
                                   :photo,
                                   :photo_cache,
                                   :link,

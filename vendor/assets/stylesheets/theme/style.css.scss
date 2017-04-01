@@ -345,6 +345,7 @@ body {
 }
 li {
   line-height: 20px;
+  list-style: none;
 }
 .btn {
   line-height: 22px;
@@ -496,6 +497,7 @@ img {
   max-width: 100%;
   vertical-align: middle;
   border: 0;
+  border-radius: 5px;
   -ms-interpolation-mode: bicubic;
 }
 h1,
@@ -1598,6 +1600,7 @@ section * {
 
 .first_line {
     display: inline;
+    margin-bottom: -15px;
 }
 
 .button {
@@ -1711,10 +1714,11 @@ li.plateform {
 }
 
 .second_line {
-    display: -webkit-box;;
+    display: -webkit-box;
     font-size: 13px;
     margin-bottom: 10px;
-    margin-top: 35px;
+    margin-top: 15px;
+    text-align: -webkit-center;
 }
 
 .second_line li {
@@ -1802,4 +1806,17 @@ p.description {
 p.review-video {
     font-size: 14px;
     font-weight: 700;
+}
+
+p.subtitle {
+    font-size: 15px;
+}
+
+li.author{
+  padding-right: 15px;
+}
+
+p.views {
+    font-size: 15px;
+    margin-top: 10px;
 }
