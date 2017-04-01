@@ -17,16 +17,13 @@ class VideosController < ApplicationController
     @new_video = Video.new
   end
 
- def create
+  def create
     @new_video = Video.new(new_video_params)
+    @results = Video.parse_video_url(@new_video.link)
+    video = Yt::Video.new id: @results[:id]
 
-    unless @new_video.plateform == nil
-      if @new_video.plateform.title == "youtube"
-        @new_video.link.gsub! '/watch?v=', '/embed/'
-      else
-        @new_video.link.gsub!(':' => '%3A', '/' => '%2F')
-      end
-    end
+    @new_video.title = video.title
+    @new_video.photo = video.thumbnail_url
 
     if @new_video.save
       redirect_to videos_path, notice: "Your video will be reviewed and posted soon"
@@ -68,7 +65,7 @@ class VideosController < ApplicationController
                                   :link,
                                   :user_id,
                                   :is_published,
-                                  :category_id)
+                                  :category)
   end
 
 end
