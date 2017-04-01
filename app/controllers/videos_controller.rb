@@ -41,8 +41,9 @@ class VideosController < ApplicationController
     @new_video.length = video.duration
     @new_video.embed_code = video.embed_html
 
-    url_thumb = video.thumbnail_url
-    @new_video.remote_photo_url = url_thumb
+    default_url_thumb = video.thumbnail_url
+    max_url_thumb = default_url_thumb.gsub('default.jpg', 'maxresdefault.jpg')
+    @new_video.remote_photo_url = max_url_thumb
   end
 
   def channel_params(video)
