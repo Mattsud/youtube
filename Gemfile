@@ -87,3 +87,6 @@ gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 # Vote
 gem 'acts_as_votable'
+
+# API Youtube / Facebook Videos
+gem 'yt', '~> 0.28.0'

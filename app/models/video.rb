@@ -10,6 +10,10 @@ class Video < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   acts_as_votable
 
+  YT_LINK_FORMAT = /\A.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/i
+
+  validates :link, presence: true, format: YT_LINK_FORMAT
+
   def score
     self.get_upvotes.size - self.get_downvotes.size
   end
