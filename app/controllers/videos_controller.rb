@@ -24,7 +24,16 @@ class VideosController < ApplicationController
 
   def create
     @new_video = Video.new(new_video_params)
+    check_link_youtube(@new_video.link)
 
+    if @new_video.save
+      redirect_to videos_path, notice: "Your video will be reviewed and posted soon"
+    else
+      render :new
+    end
+  end
+
+  def check_link_youtube(link)
     if @new_video.link =~ /\A.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/i
       @results = Video.parse_video_url(@new_video.link)
 
@@ -35,16 +44,11 @@ class VideosController < ApplicationController
 
       if youtube_link == 1
         video = Yt::Video.new id: @results[:id]
-
         youtube_video_params(video)
         channel_params(video)
+      else
+        flash[:alert] = "This video isn't working (or public). Check the video link again"
       end
-    end
-
-    if @new_video.save
-      redirect_to videos_path, notice: "Your video will be reviewed and posted soon"
-    else
-      render :new
     end
   end
 
