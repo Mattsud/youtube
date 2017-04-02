@@ -1858,3 +1858,25 @@ p.category a {
   background-color: #f5f5f5;
   font-style: normal;
 }
+
+ul.under_image {
+    display: -webkit-inline-box;
+    margin-top: 10px;
+    color: #05375d;
+    font-weight: 300;
+    text-align: center;
+}
+
+.subscribers {
+    color: #525e5f;
+    font-size: 12px;
+    border: #cccccc;
+    padding: 5px;
+    background-color: #f5f5f5;
+    margin-left: 12px;
+}
+
+li.channel_author {
+    margin-top: 5px;
+    font-size: 16px;
+}

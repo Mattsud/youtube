@@ -13,8 +13,11 @@
         <div class="center-block" style="width:650px;max-width:100%">
           <div class="first_line col-xs-12">
             <div class="image col-xs-12 col-sm-5">
-              <%= cl_image_tag video.photo, height: 260, width: 420, crop: :fill %> <br>
-              <p class="views"><i class="fa fa-user" aria-hidden="true"></i> <%= video.channel_title %></p>
+              <%= cl_image_tag video.photo, height: 260, width: 420, crop: :fill %>
+              <ul class="under_image">
+                <li class="channel_author"><i class="fa fa-user" aria-hidden="true"></i> <%= video.channel_title %></li>
+                <li class="subscribers"><%= number_with_delimiter(video.channel_subscribers) %></li>
+              </ul>
             </div>
             <div class="title col-xs-12 col-sm-7">
               <%= cl_image_tag video.plateform.photo, height: 35, width: 35, crop: :fill %> <%= link_to video.title, video_path(video) %>
