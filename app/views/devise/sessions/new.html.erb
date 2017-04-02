@@ -3,24 +3,22 @@
     <h2>Log in</h2>
     <div class="row plans">
       <div class="center-block" style="width:400px;max-width:100%">
-        <div class="plan">
-          <div class="first_line col-xs-12">
-            <div class="form_upload">
-              <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                <%= f.input :login, required: false, autofocus: true %>
-                <%= f.input :password, required: false %>
-                <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-                <p class="post-button-form">
-                  <%= f.button :submit, "Login", class:"btn btn-default post-button-form" %>
-                </p>
-            </div>
+        <div class="first_line col-xs-12">
+          <div class="form_upload">
+            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <%= f.input :login, required: false, autofocus: true %>
+              <%= f.input :password, required: false %>
+              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+              <p class="post-button-form">
+                <%= f.button :submit, "Login", class:"btn btn-default post-button-form" %>
+              </p>
           </div>
           <div class="post-button-form">
             <p class="text_form">Don't have an account ?</p>
             <%= render "devise/shared/links" %>
           </div>
-          <% end %>
         </div>
+        <% end %>
       </div>
     </div>
   </div>
