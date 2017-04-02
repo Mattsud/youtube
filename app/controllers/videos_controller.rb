@@ -42,7 +42,7 @@ class VideosController < ApplicationController
     @new_video.embed_code = video.embed_html
 
     default_url_thumb = video.thumbnail_url
-    max_url_thumb = default_url_thumb.gsub('default.jpg', 'maxresdefault.jpg')
+    max_url_thumb = default_url_thumb.gsub('default.jpg', 'hqdefault.jpg')
     @new_video.remote_photo_url = max_url_thumb
   end
 
