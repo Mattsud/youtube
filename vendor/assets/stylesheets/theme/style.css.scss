@@ -1595,6 +1595,7 @@ section * {
 
 .title a {
   color: #0c568e;
+  font-size: 23px;
 }
 
 .image {
@@ -1865,7 +1866,7 @@ ul.under_image {
     margin-top: 10px;
     color: #05375d;
     font-weight: 300;
-    text-align: center;
+    margin-left: -10px;
 }
 
 .subscribers {
@@ -1874,10 +1875,10 @@ ul.under_image {
     border: #cccccc;
     padding: 5px;
     background-color: #f5f5f5;
-    margin-left: 12px;
+    margin-left: 10px;
 }
 
 li.channel_author {
     margin-top: 5px;
-    font-size: 16px;
+    font-size: 14px;
 }
