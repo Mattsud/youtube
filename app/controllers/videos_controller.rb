@@ -1,3 +1,8 @@
+require 'rest-client'
+require 'rubygems'
+require 'json'
+require 'uri'
+
 class VideosController < ApplicationController
   before_action :authenticate_user!, only: [:new, :upvote]
   after_action :allow_youtube_iframe
@@ -19,11 +24,22 @@ class VideosController < ApplicationController
 
   def create
     @new_video = Video.new(new_video_params)
-    @results = Video.parse_video_url(@new_video.link)
-    video = Yt::Video.new id: @results[:id]
 
-    youtube_video_params(video)
-    channel_params(video)
+    if @new_video.link =~ /\A.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/i
+      @results = Video.parse_video_url(@new_video.link)
+
+      submitted_link = "https://www.googleapis.com/youtube/v3/videos?part=id&id="+@results[:id]+"&key="+ENV["KEY_YOUTUBE"]
+      response = RestClient.get submitted_link
+
+      youtube_link = JSON.parse(response)['pageInfo']['totalResults']
+
+      if youtube_link == 1
+        video = Yt::Video.new id: @results[:id]
+
+        youtube_video_params(video)
+        channel_params(video)
+      end
+    end
 
     if @new_video.save
       redirect_to videos_path, notice: "Your video will be reviewed and posted soon"

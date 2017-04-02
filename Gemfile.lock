@@ -325,6 +325,7 @@ DEPENDENCIES
   inherited_resources!
   jbuilder (~> 2.5)
   jquery-rails
+  json
   letter_opener
   listen (~> 3.0.5)
   omniauth-facebook

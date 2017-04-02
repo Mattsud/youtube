@@ -19,9 +19,9 @@
                             label: "Category",
                             checked: Category.pluck(&:id) %>
               <%= f.input :link,
-                            label: "Youtube video link",
-                            required: true,
-                            hint: 'This format : https://www.youtube.com/watch?v=g-jwJlo' %>
+                          label: "Youtube video link",
+                          required: true,
+                          hint: 'This format : https://www.youtube.com/watch?v=g-jwJlo' %>
               <%= f.hidden_field :user_id, value: current_user.id %>
               <p class="post-button-form">
                 <%= f.button :submit, "Submit", class:"btn btn-danger post-button-form" %>
