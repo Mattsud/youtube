@@ -348,6 +348,7 @@ li {
   list-style: none;
 }
 .btn {
+  line-height: 22px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-transition: 0.25s;
   -moz-transition: 0.25s;
@@ -1587,12 +1588,13 @@ section * {
 }
 
 .title{
-  float:right;
+  color: #0c568e;
+  font-size: 26px;
+  text-align: center;
 }
 
 .title a {
-      color: #0c568e;
-    font-size: 24px;
+  color: #0c568e;
 }
 
 .image {
@@ -1600,8 +1602,18 @@ section * {
 }
 
 .first_line {
-    display: inline;
-    margin-bottom: -25px;
+  display: inline;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 25px 5px 1px 5px;
+  color: #555555;
+  font-size: 15px;
+  font-weight: normal;
+  margin-bottom: 12px;
+  background-color: white;
+  box-shadow: 1px 1px 4px 1px #dddddd;
 }
 
 .button {
@@ -1651,7 +1663,6 @@ section * {
     font-size: 20px;
     padding: 10px 15px 10px 15px;
     margin-bottom: 10px;
-    text-align: center;
 
 }
 
@@ -1664,8 +1675,6 @@ p.text_form {
     font-size: 16px;
     margin-top: 15px;
     margin-bottom: 20px;
-    font-style: normal;
-    letter-spacing: 0.25px;
 }
 
 a.password {

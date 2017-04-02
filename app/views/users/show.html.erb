@@ -11,31 +11,30 @@
     <div class="row plans">
       <% @favorite_videos.each do |video| %>
         <div class="center-block" style="width:650px;max-width:100%">
-          <div class="plan">
-            <div class="first_line col-xs-12">
-              <div class="image col-xs-12 col-sm-5">
-                <%= cl_image_tag video.photo, height: 260, width: 420, crop: :fill %> <br>
-                <p class="views"><i class="fa fa-user" aria-hidden="true"></i> <%= video.channel_title %></p>
-              </div>
-              <div class="title col-xs-12 col-sm-7">
-                <%= cl_image_tag video.plateform.photo, height: 35, width: 35, crop: :fill %> <%= link_to video.title, video_path(video) %>
-                <div class="second_line col-xs-12">
-                  <ul>
-                    <li class="author"><%= cl_image_tag video.channel_thumbnail, height: 50, width: 50, crop: :fill %></li>
-                    <li class="category"></i><a href="#"> <%= video.category.title %> </a></li>
-                  </ul>
-                </div>
+          <div class="first_line col-xs-12">
+            <div class="image col-xs-12 col-sm-5">
+              <%= cl_image_tag video.photo, height: 260, width: 420, crop: :fill %> <br>
+              <p class="views"><i class="fa fa-user" aria-hidden="true"></i> <%= video.channel_title %></p>
+            </div>
+            <div class="title col-xs-12 col-sm-7">
+              <%= cl_image_tag video.plateform.photo, height: 35, width: 35, crop: :fill %> <%= link_to video.title, video_path(video) %>
+              <div class="second_line col-xs-12">
+                <ul>
+                  <li class="author"><%= cl_image_tag video.channel_thumbnail, height: 50, width: 50, crop: :fill %></li>
+                  <li class="category"></i><a href="#"><%= video.category_title %></a></li>
+                </ul>
               </div>
             </div>
-
             <div class="button">
-              <% if current_user == nil %>
-                <%= link_to glyph(:'chevron-up') + "#{video.score}", like_video_path(video), method: :put, class: 'btn btn-default btn-sm' %>
-              <% elsif current_user.voted_for? video %>
-                <%= link_to glyph(:'chevron-up') + "#{video.score}", dislike_video_path(video), method: :put, class: 'btn btn-default btn-sm btn-voted' %>
-              <% else %>
-                <%= link_to glyph(:'chevron-up') + "#{video.score}", like_video_path(video), method: :put, class: 'btn btn-default btn-sm' %>
-              <% end %>
+              <ul class="bottom">
+                <% if current_user == nil %>
+                  <li class="vote"><%= link_to glyph(:'chevron-up') + "#{video.score}", like_video_path(video), method: :put, class: 'btn btn-default btn-sm' %></li>
+                <% elsif current_user.voted_for? video %>
+                  <li class="vote"><%= link_to glyph(:'chevron-up') + "#{video.score}", dislike_video_path(video), method: :put, class: 'btn btn-default btn-sm btn-voted' %></li>
+                <% else %>
+                  <li class="vote"><%= link_to glyph(:'chevron-up') + "#{video.score}", like_video_path(video), method: :put, class: 'btn btn-default btn-sm' %></li>
+                <% end %>
+              </ul>
             </div>
           </div>
         </div>
@@ -43,3 +42,4 @@
     </div>
   </div>
 </section>
+
