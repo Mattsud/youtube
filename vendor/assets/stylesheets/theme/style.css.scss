@@ -353,6 +353,7 @@ li {
   -moz-transition: 0.25s;
   -o-transition: 0.25s;
   transition: 0.25s;
+  min-width: 80px;
 }
 .btn.btn-large {
   font-size: 17px;
@@ -1780,7 +1781,7 @@ p.description {
     padding-bottom: 56.25%;
     padding-top: 25px;
     height: 0;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .videowrapper iframe {
@@ -1819,4 +1820,33 @@ li.author{
 p.views {
     font-size: 15px;
     margin-top: 10px;
+}
+
+ul.bottom {
+    display: -webkit-inline-box;
+}
+
+li.author {
+  padding-right: 30px;
+  font-size: 15px;
+  color: #2c3e50;
+  font-weight: 800;
+  text-align: left;
+}
+
+.infos {
+    display: -webkit-inline-box;
+}
+
+.link {
+    text-align: left;
+}
+
+p.category a {
+  color: #525e5f;
+  font-size: 16px;
+  border: 1px solid #cccccc;
+  padding: 8px;
+  background-color: #f5f5f5;
+  font-style: normal;
 }

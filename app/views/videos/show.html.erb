@@ -2,19 +2,32 @@
   <div class="container">
     <div class="heading-video">
       <div class="center-block" style="width:800px;max-width:100%">
-        <h1><%= @video.title %></h1>
+        <h1><%= @video.title %></h1> <p class="category"></i><a href="#"> <%= @video.category.title %> </a></p>
           <div class="videowrapper">
             <%= @video.embed_code.html_safe %>
           </div>
-          <div class="informations"></div>
-          <ul>
-            <li class="posted">Posted the <%= @video.created_at.strftime("%d/%m/%Y") %></li>
-            <li class="category-video"><a href="#"> <%= @video.category.title %></a> </li>
-          </ul>
-          <p class="description">Description</p>
+          <div class="infos col-xs-4">
+            <li class="author"><%= cl_image_tag @video.channel_thumbnail, height: 50, width: 50, crop: :fill %> <%= @video.channel_title %></li>
+          </div>
+          <div class="button">
+            <ul class="bottom">
+              <% if current_user == nil %>
+                <li class="vote"><%= link_to glyph(:'chevron-up') + "#{@video.score}", like_video_path(@video), method: :put, class: 'btn btn-default btn-sm' %></li>
+              <% elsif current_user.voted_for? @video %>
+                <li class="vote"><%= link_to glyph(:'chevron-up') + "#{@video.score}", dislike_video_path(@video), method: :put, class: 'btn btn-default btn-sm btn-voted' %></li>
+              <% else %>
+                <li class="vote"><%= link_to glyph(:'chevron-up') + "#{@video.score}", like_video_path(@video), method: :put, class: 'btn btn-default btn-sm' %></li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="link">
+            <%= link_to "Watch the video on Youtube", @video.link, target: "_blank", class:"btn btn-danger btn-lg"%>
+          </div>
         </div>
       </div>
     </div>
+
+
     <h2>Comments</h2>
     <div class="row plans">
       <div class="center-block" style="width:800px;max-width:100%">

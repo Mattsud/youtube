@@ -16,7 +16,7 @@
             <div class="first_line col-xs-12">
               <div class="image col-xs-12 col-sm-5">
                 <%= cl_image_tag video.photo, height: 260, width: 420, crop: :fill %> <br>
-                <p class="views"><%= number_with_delimiter(video.view_count) %> views </p>
+                <p class="views"><i class="fa fa-user" aria-hidden="true"></i> <%= video.channel_title %></p>
               </div>
               <div class="title col-xs-12 col-sm-7">
                 <%= cl_image_tag video.plateform.photo, height: 35, width: 35, crop: :fill %> <%= link_to video.title, video_path(video) %>

@@ -63,14 +63,16 @@ class VideosController < ApplicationController
   def upvote
     @video = Video.find(params[:id])
     @video.liked_by current_user
-    redirect_to videos_path, notice: "Your upvote has been saved"
+    flash[:notice] = "Your upvote has been saved"
+    redirect_to(:back)
   end
 
 
   def downvote
     @video = Video.find(params[:id])
     @video.unliked_by current_user
-    redirect_to videos_path, notice: "Your upvote has been removed"
+    flash[:notice] = "Your upvote has been removed"
+    redirect_to(:back)
   end
 
   private
