@@ -38,9 +38,13 @@ category_5 = Category.new(title:'Music',
                           description: 'Education bien bien Education bien bien Education bien bien Education bien bien Education bien bien Education bien bien')
 category_5.save!
 
-category_5 = Category.new(title:'Other',
+category_6 = Category.new(title:'Sport',
                           description: 'Education bien bien Education bien bien Education bien bien Education bien bien Education bien bien Education bien bien')
-category_5.save!
+category_6.save!
+
+category_7 = Category.new(title:'Other',
+                          description: 'Education bien bien Education bien bien Education bien bien Education bien bien Education bien bien Education bien bien')
+category_7.save!
 
 youtube = Plateform.new(title:"Youtube",
                         description: "Youtube est cool")

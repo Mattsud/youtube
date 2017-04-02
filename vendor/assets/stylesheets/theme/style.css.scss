@@ -1181,11 +1181,11 @@ section * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 25px 5px 10px 5px;
+  padding: 25px 5px 1px 5px;
   color: #555555;
   font-size: 15px;
   font-weight: normal;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   background-color: white;
   box-shadow: 1px 1px 4px 1px #dddddd;
 }
@@ -1592,7 +1592,7 @@ section * {
 
 .title a {
       color: #0c568e;
-    font-size: 22px;
+    font-size: 24px;
 }
 
 .image {
@@ -1601,7 +1601,7 @@ section * {
 
 .first_line {
     display: inline;
-    margin-bottom: -15px;
+    margin-bottom: -25px;
 }
 
 .button {
@@ -1646,12 +1646,12 @@ section * {
 }
 
 .post-button-form {
-    font-style: normal;
     font-weight: 700;
-    text-align: center;
-    margin-top: 5px;
+    margin-top: 1px;
     font-size: 20px;
     padding: 15px 15px 15px 15px;
+    margin-bottom: 10px;
+
 }
 
 .heading p {
@@ -1813,10 +1813,6 @@ p.subtitle {
     font-size: 15px;
 }
 
-li.author{
-  padding-right: 15px;
-}
-
 p.views {
     font-size: 15px;
     margin-top: 10px;
@@ -1827,7 +1823,7 @@ ul.bottom {
 }
 
 li.author {
-  padding-right: 30px;
+  padding-right: 5px;
   font-size: 15px;
   color: #2c3e50;
   font-weight: 800;
