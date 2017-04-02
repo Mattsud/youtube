@@ -20,7 +20,7 @@
                             label: "Category",
                             checked: Category.pluck(&:id) %>
                 <%= f.input :link,
-                            label: "Video's link",
+                            label: "Youtube video link",
                             required: true,
                             hint: 'This format : https://www.youtube.com/watch?v=g-jwJlo' %>
                 <%= f.hidden_field :user_id, value: current_user.id %>
