@@ -13,7 +13,9 @@
        <div class="center-block" style="width:650px;max-width:100%">
           <div class="first_line col-xs-12">
             <div class="image col-xs-12 col-sm-5">
-              <%= cl_image_tag video.photo, height: 260, width: 420, crop: :fill %>
+              <%= link_to video_path(video) do %>
+                <%= cl_image_tag video.photo, height: 260, width: 420, crop: :fill %>
+              <% end %>
               <ul class="under_image">
                 <li class="channel_author"><i class="fa fa-user" aria-hidden="true"></i> <%= truncate(video.channel_title, :length => 20)%></li>
                 <li class="subscribers"><%= number_with_delimiter(video.channel_subscribers) %></li>
@@ -24,8 +26,8 @@
               <div class="second_line col-xs-12">
                 <ul>
                   <li class="author"><%= cl_image_tag video.channel_thumbnail, height: 50, width: 50, crop: :fill %></li>
-                  <li class="category"></i><a href="#"><%= video.category_title %></a></li>
-                  <li class="duration"></i><a href="#"><%= Time.at(video.length.to_i).utc.strftime("%M:%S")%></a></li>
+                  <li class="category"><%= video.category_title %></li>
+                  <li class="duration"><%= Time.at(video.length.to_i).utc.strftime("%M:%S")%></li>
                 </ul>
               </div>
             </div>

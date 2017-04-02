@@ -1851,13 +1851,24 @@ li.author {
     text-align: left;
 }
 
-p.category a {
+li.category {
   color: #525e5f;
-  font-size: 16px;
-  border: 1px solid #cccccc;
-  padding: 8px;
+  font-size: 14px;
+  padding: 6px;
   background-color: #f5f5f5;
   font-style: normal;
+}
+
+li.duration {
+  color: #525e5f;
+  font-size: 14px;
+  padding: 6px;
+  background-color: #f5f5f5;
+  font-style: normal;
+}
+
+ul.subtitle {
+    display: -webkit-inline-box;
 }
 
 ul.under_image {

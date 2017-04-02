@@ -2,7 +2,11 @@
   <div class="container">
     <div class="heading-video">
       <div class="center-block" style="width:800px;max-width:100%">
-        <h1><%= @video.title %></h1> <p class="category"></i><a href="#"> <%= @video.category.title %> </a></p>
+        <h1><%= @video.title %></h1>
+        <ul class="subtitle">
+          <li class="category"><%= @video.category.title %></li>
+          <li class="duration"><%= Time.at(@video.length.to_i).utc.strftime("%M:%S")%></li>
+        </ul>
           <div class="videowrapper">
             <%= @video.embed_code.html_safe %>
           </div>
