@@ -13,9 +13,9 @@
        <div class="center-block" style="width:650px;max-width:100%">
           <div class="first_line col-xs-12">
             <div class="image col-xs-12 col-sm-5">
-              <%= link_to video_path(video) do %>
-                <%= cl_image_tag video.photo, height: 260, width: 420, crop: :fill %>
-              <% end %>
+              <div class="videowrapper_home">
+                <%= video.embed_code.html_safe %>
+              </div>
               <ul class="under_image">
                 <li class="channel_author"><i class="fa fa-user" aria-hidden="true"></i> <%= truncate(video.channel_title, :length => 20)%></li>
                 <li class="subscribers"><%= number_with_delimiter(video.channel_subscribers) %></li>
@@ -47,5 +47,4 @@
       <% end %>
     </div>
   </div>
-</section>
 
