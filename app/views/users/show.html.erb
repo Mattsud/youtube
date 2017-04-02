@@ -25,6 +25,7 @@
                 <ul>
                   <li class="author"><%= cl_image_tag video.channel_thumbnail, height: 50, width: 50, crop: :fill %></li>
                   <li class="category"></i><a href="#"><%= video.category_title %></a></li>
+                  <li class="duration"></i><a href="#"><%= Time.at(video.length.to_i).utc.strftime("%M:%S")%></a></li>
                 </ul>
               </div>
             </div>
@@ -45,3 +46,4 @@
     </div>
   </div>
 </section>
+
