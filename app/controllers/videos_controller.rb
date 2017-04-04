@@ -9,7 +9,12 @@ class VideosController < ApplicationController
 
   def index
     @videos = Video.all
-    @videos_shown = @videos.where(is_published:true)
+    @videos_current_week = @videos.where(is_published:true)
+                                  .where("created_at >= ?", 1.day.ago.utc)
+                                  .order(:cached_votes_up => :desc)
+
+    @videos_last_week = @videos.where(is_published:true)
+                                  .where("created_at <= ?", 1.day.ago.utc)
                                   .order(:cached_votes_up => :desc)
   end
 
