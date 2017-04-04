@@ -1,4 +1,9 @@
 ActiveAdmin.register Video do
+  controller do
+  def find_resource
+    scoped_collection.where(slug: params[:id]).first!
+  end
+end
   permit_params :title,
                 :description,
                 :plateform,
