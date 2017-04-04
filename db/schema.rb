@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 20170404201019) do
     t.string   "slug"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.index ["slug"], name: "index_users_on_slug", using: :btree
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
@@ -132,6 +133,7 @@ ActiveRecord::Schema.define(version: 20170404201019) do
     t.index ["cached_weighted_total"], name: "index_videos_on_cached_weighted_total", using: :btree
     t.index ["category_id"], name: "index_videos_on_category_id", using: :btree
     t.index ["plateform_id"], name: "index_videos_on_plateform_id", using: :btree
+    t.index ["slug"], name: "index_videos_on_slug", using: :btree
   end
 
   create_table "votes", force: :cascade do |t|

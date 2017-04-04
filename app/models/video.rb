@@ -14,10 +14,39 @@ class Video < ApplicationRecord
   YT_LINK_FORMAT = /\A.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/i
 
   validates :link, presence: true, format: YT_LINK_FORMAT
-  friendly_id :title, :use => :slugged
+  friendly_id :slug_candidates, use: :slugged
+  after_create :remake_slug
+
+  def slug_candidates
+    [
+      :title,
+      [:title, :id],
+    ]
+  end
+
+  def remake_slug
+    self.update_attribute(:slug, nil)
+    self.save!
+  end
+
+  def should_generate_new_friendly_id?
+    new_record? || self.slug.nil?
+  end
 
   def score
     self.get_upvotes.size - self.get_downvotes.size
+  end
+
+  def year
+    created_at.localtime.strftime("%Y")
+  end
+
+  def month
+    created_at.localtime.strftime("%m")
+  end
+
+  def day
+    created_at.localtime.strftime("%d")
   end
 
   def self.parse_video_url(url)

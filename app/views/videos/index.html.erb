@@ -54,7 +54,7 @@
     </div>
     <div class="date">
       <% if @date.past? %>
-        <h2><i class="fa fa-arrow-down" aria-hidden="true"></i> <%= link_to @date.prev_day.strftime("%B-%d"), videos_path(:date => @date.prev_day.strftime("%B-%d")) %> / <i class="fa fa-arrow-up" aria-hidden="true"></i> <%= link_to @date.next_day.strftime("%B-%d"), videos_path(:date => @date.next_day.strftime("%B-%d")) %> </h2>
+        <h2><i class="fa fa-arrow-down" aria-hidden="true"></i> <%= link_to @date.prev_day.strftime("%B-%d"), videos_path(:date => @date.prev_day.strftime("%m/%d/%Y")) %> / <i class="fa fa-arrow-up" aria-hidden="true"></i> <%= link_to @date.next_day.strftime("%B-%d"), videos_path(:date => @date.next_day.strftime("%B-%d")) %> </h2>
       <% else %>
       <h2><i class="fa fa-arrow-down" aria-hidden="true"></i> <%= link_to 'Yesterday', videos_path(:date => @date.prev_day.strftime("%B-%d")) %></h2>
       <% end %>
