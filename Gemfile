@@ -91,3 +91,6 @@ gem 'acts_as_votable'
 # API Youtube / Facebook Videos
 gem 'yt', '~> 0.28.0'
 gem 'json'
+
+# Pagination
+gem 'kaminari'

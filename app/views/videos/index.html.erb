@@ -8,7 +8,7 @@
       <p><%= link_to "POST A VIDEO", new_video_path, :class => "btn btn-primary post-button" %></p>
     </div>
 
-    <h2>Best videos of the week</h2>
+    <h2>Today's best videos</h2>
     <div class="row plans">
       <% @videos_current_week.each do |video| %>
         <div class="center-block" style="width:650px;max-width:100%">
@@ -47,7 +47,7 @@
         </div>
       <% end %>
     </div>
-    <h2>Last week</h2>
+    <h2>Yesterday</h2>
     <div class="row plans">
       <% @videos_last_week.each do |video| %>
         <div class="center-block" style="width:650px;max-width:100%">
