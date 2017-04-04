@@ -94,3 +94,6 @@ gem 'json'
 
 # Pagination
 gem 'kaminari'
+
+# Url
+gem 'friendly_id', '~> 5.1.0'

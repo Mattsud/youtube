@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170401162332) do
+ActiveRecord::Schema.define(version: 20170404201019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,18 @@ ActiveRecord::Schema.define(version: 20170401162332) do
     t.string   "photo"
   end
 
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+  end
+
   create_table "plateforms", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -79,6 +91,7 @@ ActiveRecord::Schema.define(version: 20170401162332) do
     t.boolean  "admin",                  default: false, null: false
     t.string   "username"
     t.string   "avatar"
+    t.string   "slug"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
@@ -109,6 +122,7 @@ ActiveRecord::Schema.define(version: 20170401162332) do
     t.string   "length"
     t.string   "embed_code"
     t.string   "channel_thumbnail"
+    t.string   "slug"
     t.index ["cached_votes_down"], name: "index_videos_on_cached_votes_down", using: :btree
     t.index ["cached_votes_score"], name: "index_videos_on_cached_votes_score", using: :btree
     t.index ["cached_votes_total"], name: "index_videos_on_cached_votes_total", using: :btree

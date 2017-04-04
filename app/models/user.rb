@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  extend FriendlyId
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   mount_uploader :avatar, AvatarUploader
@@ -13,6 +14,8 @@ class User < ApplicationRecord
   acts_as_voter
 
   validate :validate_username
+  friendly_id :username
+
 
   def validate_username
     if User.where(email: username).exists?

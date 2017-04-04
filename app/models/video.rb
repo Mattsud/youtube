@@ -1,4 +1,5 @@
 class Video < ApplicationRecord
+  extend FriendlyId
 
   has_one :user
   belongs_to :plateform
@@ -13,6 +14,7 @@ class Video < ApplicationRecord
   YT_LINK_FORMAT = /\A.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/i
 
   validates :link, presence: true, format: YT_LINK_FORMAT
+  friendly_id :title, :use => :slugged
 
   def score
     self.get_upvotes.size - self.get_downvotes.size

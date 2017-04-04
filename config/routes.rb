@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/pages/:page" => "pages#show"
 
   resources :videos, only: [:index, :show, :new, :create]
+
   resources :categories, only: [:show]
 
   resources :users, only: [:show]

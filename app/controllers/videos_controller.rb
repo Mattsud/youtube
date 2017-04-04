@@ -20,7 +20,7 @@ class VideosController < ApplicationController
   end
 
   def show
-    @video = Video.find(params[:id])
+    @video = Video.friendly.find(params[:id])
     @video_date = @video.created_at
   end
 
