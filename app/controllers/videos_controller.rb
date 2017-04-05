@@ -8,20 +8,30 @@ class VideosController < ApplicationController
   after_action :allow_youtube_iframe
 
   def index
-    @date = Date.parse(params[:date]) rescue Date.today
-    @videos = Video.where(:created_at => @date.at_midnight..@date.next_day.at_midnight)
+    @today_date = Date.parse(params[:date]) rescue Date.today
+    @last_week_date = Date.today - 7
 
     @total_videos   = Video.count
-    @current_videos = @videos.size
 
 
-    @videos_published = @videos.where(is_published:true)
+    @current_week = Video.where(:created_at => (Date.today - 7)..(Date.today))
+                          .where(is_published:true)
+                          .order(:cached_votes_up => :desc)
+
+    @last_week = Video.where(:created_at => (Date.today - 14)..(Date.today - 7))
+                                  .where(is_published:true)
                                   .order(:cached_votes_up => :desc)
 
     if params[:language]
-      @videos_published = @videos.where(language: params[:language])
-                                 .where(is_published:true)
-                                 .order(:cached_votes_up => :desc)
+      @current_week = Video.where(language: params[:language])
+                           .where(:created_at => (Date.today - 7)..(Date.today))
+                           .where(is_published:true)
+                           .order(:cached_votes_up => :desc)
+
+      @last_week = Video.where(language: params[:language])
+                        .where(:created_at => (Date.today - 14)..(Date.today - 7))
+                        .where(is_published:true)
+                        .order(:cached_votes_up => :desc)
     end
   end
 

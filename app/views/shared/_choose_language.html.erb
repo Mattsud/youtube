@@ -7,6 +7,6 @@
     <%= link_to videos_path(request.query_parameters.merge(language: "english")) do %>
       <li><%= image_tag "english_flag.png", height: 25, width: 25, crop: :fill %></li>
     <% end %>
-    <li><%= link_to 'All', videos_path(:date => params[:date]), class: 'all_button' %></li>
+    <li><%= link_to 'All', videos_path(:period => params[:period]), class: 'all_button' %></li>
   </ul>
 </div>
