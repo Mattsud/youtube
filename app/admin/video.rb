@@ -1,9 +1,27 @@
 ActiveAdmin.register Video do
+  actions :all, except: [:show]
+  config.filters = false
   controller do
-  def find_resource
-    scoped_collection.where(slug: params[:id]).first!
+    def find_resource
+      scoped_collection.where(slug: params[:id]).first!
+    end
   end
-end
+
+  index do
+    selectable_column
+    id_column
+    column :created_at
+    column :user_id
+    column :is_published
+    column :title
+    column :language
+    column :category_title
+    column :channel_title
+    column :channel_subscribers
+    actions
+  end
+
+
   permit_params :title,
                 :description,
                 :plateform,
