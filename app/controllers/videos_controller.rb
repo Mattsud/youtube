@@ -13,22 +13,22 @@ class VideosController < ApplicationController
 
     @total_videos   = Video.count
 
-    @current_week = Video.where(:created_at => (Date.today - 7)..(Date.today))
-                          .where(is_published:true)
-                          .order(:cached_votes_up => :desc)
+    @current_week = Video.where("created_at >= ?", Date.today.at_beginning_of_week)
+                         .where(is_published:true)
+                         .order(:cached_votes_up => :desc)
 
-    @last_week = Video.where(:created_at => (Date.today - 14)..(Date.today - 7))
-                                  .where(is_published:true)
-                                  .order(:cached_votes_up => :desc)
+    @last_week = Video.where("created_at <= ?", Date.today.at_beginning_of_week)
+                      .where(is_published:true)
+                      .order(:cached_votes_up => :desc)
 
     if params[:language]
       @current_week = Video.where(language: params[:language])
-                           .where(:created_at => (Date.today - 7)..(Date.today))
+                           .where("created_at >= ?", Date.today.at_beginning_of_week)
                            .where(is_published:true)
                            .order(:cached_votes_up => :desc)
 
       @last_week = Video.where(language: params[:language])
-                        .where(:created_at => (Date.today - 14)..(Date.today - 7))
+                        .where("created_at <= ?", Date.today.at_beginning_of_week)
                         .where(is_published:true)
                         .order(:cached_votes_up => :desc)
     end
