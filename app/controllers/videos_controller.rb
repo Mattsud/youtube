@@ -17,6 +17,12 @@ class VideosController < ApplicationController
 
     @videos_published = @videos.where(is_published:true)
                                   .order(:cached_votes_up => :desc)
+
+    if params[:language]
+      @videos_published = @videos.where(language: params[:language])
+                                 .where(is_published:true)
+                                 .order(:cached_votes_up => :desc)
+    end
   end
 
   def show
@@ -33,7 +39,7 @@ class VideosController < ApplicationController
     check_link_youtube(@new_video.link)
 
     if @new_video.save
-      redirect_to videos_path, notice: "Your video will be reviewed and posted soon"
+      redirect_to videos_path, notice: "Thank you ! Your video will be reviewed and posted soon :)"
     else
       render :new
     end
@@ -53,7 +59,7 @@ class VideosController < ApplicationController
         youtube_video_params(video)
         channel_params(video)
       else
-        flash[:alert] = "This video isn't working (or public). Check the video link again"
+        flash[:alert] = "Oups ! This video isn't working (or public). Check the video link again"
       end
     end
   end
@@ -112,7 +118,7 @@ class VideosController < ApplicationController
                                   :plateform_id,
                                   :description,
                                   :category_title,
-                                  :category_id,
+                                  :language,
                                   :view_count,
                                   :length,
                                   :embed_code,
@@ -123,8 +129,7 @@ class VideosController < ApplicationController
                                   :photo_cache,
                                   :link,
                                   :user_id,
-                                  :is_published,
-                                  :category)
+                                  :is_published)
   end
 
 end

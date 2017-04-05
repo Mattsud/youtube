@@ -12,7 +12,8 @@ end
                 :user_id,
                 :link,
                 :is_published,
-                :category_id
+                :category_title,
+                :language
 
       form :html => { :enctype => "multipart/form-data" } do |f|
       f.inputs "Videos" do
@@ -21,9 +22,8 @@ end
       f.input :title, :label => "Titre de la vidéo"
       f.input :plateform
       f.input :link
-      f.input :category, :label => "Catégorie de la vidéo",
-                            as: :select,
-                            checked: Category.pluck(&:id)
+      f.input :language
+      f.input :category_title
       f.input :user_id, :label => 'User',
                         :as => :select,
                         :collection => User.all.map{ |s| [ s.id ]}

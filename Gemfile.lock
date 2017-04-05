@@ -119,6 +119,8 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20170223)
       unf (>= 0.0.5, < 1.0.0)
+    enumerize (2.0.1)
+      activesupport (>= 3.2)
     erubis (2.7.0)
     execjs (2.7.0)
     faraday (0.11.0)
@@ -323,6 +325,7 @@ DEPENDENCIES
   cloudinary
   coffee-rails (~> 4.2)
   devise
+  enumerize
   figaro
   friendly_id (~> 5.1.0)
   inherited_resources!

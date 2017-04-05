@@ -1,0 +1,11 @@
+<div class="home_flag">
+  <p>Choose your language</p>
+  <ul>
+    <%= link_to videos_path(language: "french") do %>
+      <li><%= image_tag "french_flag.png", height: 20, width: 30, crop: :fill %></li>
+    <% end %>
+    <%= link_to videos_path(language: "english") do %>
+      <li><%= image_tag "english_flag.png", height: 20, width: 30, crop: :fill %></li>
+    <% end %>
+  </ul>
+</div>

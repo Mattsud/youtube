@@ -3,10 +3,8 @@ class Video < ApplicationRecord
 
   has_one :user
   belongs_to :plateform
-  belongs_to :category
 
-  validates_presence_of :category
-  validates_presence_of :title, :link, :user_id, :category_id
+  validates_presence_of :title, :link, :user_id
 
   mount_uploader :photo, PhotoUploader
   acts_as_votable
@@ -16,6 +14,9 @@ class Video < ApplicationRecord
   validates :link, presence: true, format: YT_LINK_FORMAT
   friendly_id :slug_candidates, use: :slugged
   after_create :remake_slug
+
+  extend Enumerize
+    enumerize :language, in: [:french, :english]
 
   def slug_candidates
     [

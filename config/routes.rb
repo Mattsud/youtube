@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/pages/:page" => "pages#show"
   get "/videos/add-a-video", to: "videos#new", as: "add-a-video"
   get "/:year/:month/:day/:id", to: "videos#show", as: 'video'
+  get "/:year/:month/:day", to: "videos#index", as: 'index'
 
   resources :videos, only: [:index, :create]
   resources :categories, only: [:show]

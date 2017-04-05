@@ -13,11 +13,10 @@
         <div class="first_line col-xs-12">
           <div class="form_upload">
             <%= simple_form_for @new_video do |f| %>
-              <%= f.association :category,
+              <%= f.input :language,
                             as: :select,
                             required: true,
-                            label: "Category",
-                            checked: Category.pluck(&:id) %>
+                            label: "Language" %>
               <%= f.input :link,
                           label: "Youtube video link",
                           required: true,

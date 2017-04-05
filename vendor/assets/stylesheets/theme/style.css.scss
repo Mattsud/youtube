@@ -1620,6 +1620,7 @@ section * {
 .button {
   text-align:right;
   margin-right:25px;
+  margin-bottom: 20px;
 }
 
 .third_line {
@@ -1638,7 +1639,7 @@ section * {
 .price-1 h2 {
     text-align: center;
     font-size: 30px;
-    margin-bottom: 20px
+    margin-bottom: 3px
 }
 
 .price-1 p {
@@ -1768,7 +1769,7 @@ li.category {
 .heading-video {
     box-shadow: 1px 1px 3px 1px #ebedee;
     background-color: white;
-    padding: 10px 25px 20px 25px;
+    padding: 10px 10px 10px 10px;
     margin-bottom: 30px;
     text-align: center;
 }
@@ -1850,7 +1851,7 @@ li.author {
 }
 
 .link {
-    text-align: left;
+    text-align: center;
 }
 
 li.category {
@@ -1925,4 +1926,26 @@ h2 a:hover {
 
 .date h2 {
     font-size: 20px;
+}
+
+.home_flag {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.home_flag li {
+    display: inline;
+    padding: 5px;
+}
+
+.home_flag ul {
+    display: inline;
+    padding: 5px;
+}
+
+.home_flag p {
+    font-style:normal;
+    font-size: 18px;
+    color: #0c568e;
+    font-weight: 100;
 }

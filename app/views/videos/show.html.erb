@@ -3,14 +3,16 @@
     <div class="heading-video">
       <div class="center-block" style="width:800px;max-width:100%">
         <h1><%= @video.title %></h1>
-        <ul class="subtitle">
-          <li class="category"><%= @video.category.title %></li>
-          <li class="duration"><%= Time.at(@video.length.to_i).utc.strftime("%M:%S")%></li>
-        </ul>
+        <div class="under-title">
+          <ul class="subtitle">
+            <li class="category"><%= @video.category.title %></li>
+            <li class="duration"><%= Time.at(@video.length.to_i).utc.strftime("%M:%S")%></li>
+          </ul>
+        </div>
           <div class="videowrapper">
             <%= @video.embed_code.html_safe %>
           </div>
-          <div class="infos col-xs-4">
+          <div class="infos col-xs-12 col-sm-5">
             <li class="author"><%= cl_image_tag @video.channel_thumbnail, height: 50, width: 50, crop: :fill %> <%= @video.channel_title %></li>
           </div>
           <div class="button">
@@ -25,19 +27,17 @@
             </ul>
           </div>
           <div class="link">
-            <%= link_to "Watch the video on Youtube", @video.link, target: "_blank", class:"btn btn-danger btn-lg"%>
-          </div>
+          <%= link_to "Watch on Youtube", @video.link, target: "_blank", class:"btn btn-danger btn-lg"%>
         </div>
       </div>
     </div>
-
-
-    <h2>Comments</h2>
-    <div class="row plans">
-      <div class="center-block" style="width:800px;max-width:100%">
-        <div class="plan">
-          <div id="disqus_thread"></div>
-          <script>
+  </div>
+  <h2>Comments</h2>
+  <div class="row plans">
+    <div class="center-block" style="width:800px;max-width:100%">
+      <div class="plan">
+        <div id="disqus_thread"></div>
+        <script>
             /**
             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/

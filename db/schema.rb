@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170404201019) do
+ActiveRecord::Schema.define(version: 20170405020123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,14 +46,6 @@ ActiveRecord::Schema.define(version: 20170404201019) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "photo"
-  end
-
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
@@ -64,6 +56,13 @@ ActiveRecord::Schema.define(version: 20170404201019) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.string   "title"
+    t.string   "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "plateforms", force: :cascade do |t|
@@ -106,7 +105,6 @@ ActiveRecord::Schema.define(version: 20170404201019) do
     t.string   "link"
     t.boolean  "is_published",            default: false
     t.integer  "user_id"
-    t.integer  "category_id"
     t.integer  "plateform_id"
     t.integer  "cached_votes_total",      default: 0
     t.integer  "cached_votes_score",      default: 0
@@ -124,6 +122,7 @@ ActiveRecord::Schema.define(version: 20170404201019) do
     t.string   "embed_code"
     t.string   "channel_thumbnail"
     t.string   "slug"
+    t.string   "language"
     t.index ["cached_votes_down"], name: "index_videos_on_cached_votes_down", using: :btree
     t.index ["cached_votes_score"], name: "index_videos_on_cached_votes_score", using: :btree
     t.index ["cached_votes_total"], name: "index_videos_on_cached_votes_total", using: :btree
@@ -131,7 +130,6 @@ ActiveRecord::Schema.define(version: 20170404201019) do
     t.index ["cached_weighted_average"], name: "index_videos_on_cached_weighted_average", using: :btree
     t.index ["cached_weighted_score"], name: "index_videos_on_cached_weighted_score", using: :btree
     t.index ["cached_weighted_total"], name: "index_videos_on_cached_weighted_total", using: :btree
-    t.index ["category_id"], name: "index_videos_on_category_id", using: :btree
     t.index ["plateform_id"], name: "index_videos_on_plateform_id", using: :btree
     t.index ["slug"], name: "index_videos_on_slug", using: :btree
   end
