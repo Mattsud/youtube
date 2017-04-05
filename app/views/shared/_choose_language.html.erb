@@ -2,10 +2,10 @@
   <p>Choose your language</p>
   <ul>
     <%= link_to videos_path(request.query_parameters.merge(language: "french")) do %>
-      <li><%= image_tag "french_flag.png", height: 20, width: 30, crop: :fill %></li>
+      <li><%= image_tag "french_flag.png", height: 25, width: 25, crop: :fill %></li>
     <% end %>
     <%= link_to videos_path(request.query_parameters.merge(language: "english")) do %>
-      <li><%= image_tag "english_flag.png", height: 20, width: 30, crop: :fill %></li>
+      <li><%= image_tag "english_flag.png", height: 25, width: 25, crop: :fill %></li>
     <% end %>
     <li><%= link_to 'All', videos_path(:date => params[:date]), class: 'all_button' %></li>
   </ul>
