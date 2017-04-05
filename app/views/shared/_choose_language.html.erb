@@ -7,5 +7,6 @@
     <%= link_to videos_path(language: "english") do %>
       <li><%= image_tag "english_flag.png", height: 20, width: 30, crop: :fill %></li>
     <% end %>
+    <li><%= link_to 'All', videos_path, class: 'all_button' %></li>
   </ul>
 </div>
