@@ -13,7 +13,6 @@ class VideosController < ApplicationController
 
     @total_videos   = Video.count
 
-
     @current_week = Video.where(:created_at => (Date.today - 7)..(Date.today))
                           .where(is_published:true)
                           .order(:cached_votes_up => :desc)

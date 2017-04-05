@@ -1617,6 +1617,21 @@ section * {
   box-shadow: 1px 1px 4px 1px #dddddd;
 }
 
+.first_line_menu {
+  display: inline;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 25px 5px 1px 5px;
+  color: #555555;
+  font-size: 15px;
+  font-weight: normal;
+  margin-bottom: 12px;
+  background-color: white;
+  box-shadow: 1px 1px 4px 1px #dddddd;
+}
+
 .button {
   text-align:right;
   margin-right:25px;
