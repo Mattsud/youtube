@@ -17,7 +17,7 @@ class VideosController < ApplicationController
                          .where(is_published:true)
                          .order(:cached_votes_up => :desc)
 
-    @last_week = Video.where("created_at >= ?", Date.today.at_beginning_of_week - 7)
+    @last_week = Video.where("created_at <= ?", Date.today.at_beginning_of_week - 7)
                       .where(is_published:true)
                       .order(:cached_votes_up => :desc)
 
@@ -28,7 +28,7 @@ class VideosController < ApplicationController
                            .order(:cached_votes_up => :desc)
 
       @last_week = Video.where(language: params[:language])
-                        .where("created_at >= ?", Date.today.at_beginning_of_week - 7)
+                        .where("created_at <= ?", Date.today.at_beginning_of_week - 7)
                         .where(is_published:true)
                         .order(:cached_votes_up => :desc)
     end
