@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :videos
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   mount_uploader :photo, PhotoUploader
   acts_as_voter
