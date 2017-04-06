@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :upvote]
 
   def new
     @message = Message.new
@@ -19,7 +20,7 @@ class MessagesController < ApplicationController
 private
 
   def message_params
-    params.require(:message).permit(:name, :email, :content)
+    params.require(:message).permit(:name, :email, :content, :username)
   end
 
 end

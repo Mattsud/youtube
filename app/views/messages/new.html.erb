@@ -10,6 +10,7 @@
               <%= message_form.input :name, required: true, autofocus: true, placeholder: "Your name" %>
               <%= message_form.input :email, required: true, autofocus: true, placeholder: "Your email"%>
               <%= message_form.input :content, as: :text, required: true, autofocus: true, placeholder: "Your message", :input_html => { 'rows' => 5}%>
+              <%= f.hidden_field :username, value: current_user.username %>
               <p class="post-button-form">
                 <%= message_form.submit "Send", class:"btn btn-danger post-button-form" %>
               </p>
