@@ -1,6 +1,6 @@
 <div class="sort_menu col-xs-12 col-sm-12 col-lg-2">
   <div class="language col-xs-6 col-sm-6 col-lg-12">
-    <p><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Language</p>
+    <p>Language</p>
     <ul>
       <%= link_to videos_path(request.query_parameters.merge(language: "french")) do %>
         <li><%= image_tag "french_flag.png", height: 25, width: 25, crop: :fill %></li>
@@ -12,7 +12,7 @@
     </ul>
   </div>
   <div class="category col-xs-6 col-sm-6 col-lg-12">
-    <p><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Category</p>
+    <p>Category</p>
     <ul>
       <li><%= link_to 'Comedy', videos_path(:period => params[:period]), class: 'all_button' %></li>
       <li><%= link_to 'Film & Animation', videos_path(:period => params[:period]), class: 'all_button' %></li>
