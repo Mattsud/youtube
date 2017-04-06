@@ -1996,7 +1996,6 @@ a.all_button {
 
 .language {
     text-align: center;
-    padding-bottom: 20px;
 }
 
 .sort_menu {
@@ -2026,6 +2025,23 @@ a.all_button {
 
 .category p {
   text-align:center;
+}
+
+
+@media (min-width: 1200px) {
+    .sort_menu {
+      text-align: left;
+      background-color: white;
+      padding: 15px;
+      box-shadow: 1px 1px 4px 1px #dddddd;
+    }
+}
+
+@media (min-width: 1200px) {
+    .language {
+      text-align: left;
+      padding-bottom: 20px;
+    }
 }
 
 @media (min-width: 1200px) {
