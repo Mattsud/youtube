@@ -21,7 +21,6 @@ ActiveAdmin.register Video do
     actions
   end
 
-
   permit_params :title,
                 :description,
                 :plateform,

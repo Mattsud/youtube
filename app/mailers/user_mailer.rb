@@ -9,8 +9,5 @@ class UserMailer < ApplicationMailer
     @user = user
 
     mail(to: @user.email, subject: 'Welcome to RisingTube')
-    # This will render a view in `app/views/user_mailer`!
-    @greeting = "Hi"
-    mail to: @user.email
   end
 end
