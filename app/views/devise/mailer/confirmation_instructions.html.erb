@@ -1,12 +1,16 @@
 <p>Hello <%= @user.username %>, </p>
 
-<p>Welcome to RisingTube, the best website to promote and discover new Youtube channels. </p>
+<p>Welcome to RisingTube, the best website to promote your Youtube Channel. </p>
 
-<p>On RisingTube only small channels can be displayed, and the best videos get votes and visibility. </p>
+<p>Being discovered on Youtube is complicated when you have no money / network</p>
+
+<p>Compete with Pewdiepie or huge channels is a bit hard right ?</p>
+
+<p>RisingTube gives a chance to every Youtuber, even the smallest</p>
 
 <p>Stop spamming Youtube video comments and start building a reliable community !! </p>
 
-<p> Before voting and posting, you must confirm your account email through the link below: </p>
+<p>But before voting and posting, you must confirm your account email through the link below: </p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
 
