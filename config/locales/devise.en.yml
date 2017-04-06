@@ -18,7 +18,7 @@ en:
       unconfirmed: "You have to confirm your email address before continuing."
     mailer:
       confirmation_instructions:
-        subject: "Welcome to RisingTube"
+        subject: "Welcome to RisingTube - Confirmation needed"
       reset_password_instructions:
         subject: "Reset password instructions"
       unlock_instructions:
