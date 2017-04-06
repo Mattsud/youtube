@@ -1695,6 +1695,7 @@ p.text_form {
     font-size: 16px;
     margin-top: 15px;
     margin-bottom: 20px;
+    font-style: normal;
 }
 
 a.password {
@@ -1968,4 +1969,9 @@ h2 a:hover {
 a.all_button {
     color: #165d92;
     text-decoration: underline;
+}
+
+.confirmation {
+    font-size: 13px;
+    margin-top: -20px;
 }
