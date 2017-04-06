@@ -8,6 +8,10 @@ class VideosController < ApplicationController
   before_filter :only_confirmed, only: [:new, :upvote]
   after_action :allow_youtube_iframe
 
+  def only_confirmed
+    redirect_to '/', notice: "You must confirm your email address before voting or posting a video" unless current_user.confirmed?
+  end
+
   def index
     @today_date = Date.parse(params[:date]) rescue Date.today
     @last_week_date = Date.today - 7
