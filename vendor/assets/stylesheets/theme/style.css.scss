@@ -1654,7 +1654,7 @@ section * {
 .price-1 h2 {
     text-align: center;
     font-size: 30px;
-    margin-bottom: 3px
+    margin-bottom: 10px
 }
 
 .price-1 p {
@@ -1667,7 +1667,6 @@ section * {
     box-shadow: 1px 1px 3px 1px #ebedee;;
     background-color: white;
     padding: 5px 0px 20px 0px;
-    margin-bottom: 30px
 }
 
 
@@ -1732,7 +1731,7 @@ a.password {
 }
 
 .content {
-    padding: 20px 50px 10px 50px;
+    padding: 1px 50px 30px 50px;
 }
 
 .btn-voted{
@@ -1944,28 +1943,6 @@ h2 a:hover {
     font-size: 20px;
 }
 
-.home_flag {
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.home_flag li {
-    display: inline;
-    padding: 5px;
-}
-
-.home_flag ul {
-    display: inline;
-    padding: 5px;
-}
-
-.home_flag p {
-    font-style:normal;
-    font-size: 18px;
-    color: #0c568e;
-    font-weight: 100;
-}
-
 a.all_button {
     color: #165d92;
     text-decoration: underline;
@@ -1974,4 +1951,80 @@ a.all_button {
 .confirmation {
     font-size: 13px;
     margin-top: -20px;
+}
+
+.heading_content{
+    box-shadow: 1px 1px 3px 1px #ebedee;;
+    background-color: white;
+    padding: 5px 0px 20px 0px;
+    margin-bottom: 30px;
+    }
+
+.heading_content h1 {
+    text-align: center;
+    margin-top: 13px;
+    font-size: 30px;
+    color:#0c568e;
+    padding: 10px 30px 10px 30px;
+    line-height: 1.7;
+}
+
+.content h2 {
+    text-align: center;
+    margin-top: 35px;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.content p {
+    text-align: left;
+    margin-top: 13px;
+    font-size: 18px;
+    font-style: normal;
+}
+
+.content a {
+    color: #2c3e50;
+    text-decoration: underline;
+    font-weight: 200;
+}
+
+.contact p{
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+.language {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.sort_menu {
+    text-align: center;
+}
+
+.sort_menu li {
+    display: inline;
+    padding: 5px;
+}
+
+.sort_menu ul {
+    display: inline;
+    padding: 5px;
+}
+
+.sort_menu p {
+    font-style:normal;
+    font-size: 18px;
+    color: #0c568e;
+    font-weight: 700;
+    text-align: center;
+}
+
+.category {
+  text-align:center;
+}
+
+.category p {
+  text-align:center;
 }

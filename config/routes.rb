@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get "/:year/:month/:day/:id", to: "videos#show", as: 'video'
   get "/:year/:month/:day", to: "videos#index", as: 'index'
 
+  get 'contact', to: 'messages#new', as: 'contact'
+  post 'contact', to: 'messages#create'
+
   resources :videos, only: [:index, :create]
   resources :categories, only: [:show]
 

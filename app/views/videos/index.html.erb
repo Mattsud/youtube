@@ -10,14 +10,14 @@
 
     <% if params[:period] == "last_week" %>
       <h2>Last week best videos</h2>
-      <%= render "shared/choose_language" %>
+      <%= render "shared/sort_menu" %>
       <%= render "shared/content_last_week" %>
       <div class="date">
         <h2><i class="fa fa-arrow-up" aria-hidden="true"></i> <%= link_to "Current week", videos_path(request.query_parameters.merge(:period => "current_week")) %></h2>
       </div>
     <% else %>
       <h2>Best videos of the week</h2>
-      <%= render "shared/choose_language" %>
+      <%= render "shared/sort_menu" %>
       <%= render "shared/content_current_week" %>
       <div class="date">
         <h2><i class="fa fa-arrow-down" aria-hidden="true"></i> <%= link_to 'Last week', videos_path(request.query_parameters.merge(:period => "last_week")) %></h2>

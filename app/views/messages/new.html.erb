@@ -1,0 +1,22 @@
+<section class="price-1">
+  <div class="container">
+    <div class="row plans">
+      <div class="center-block" style="width:600px;max-width:90%">
+        <div class="first_line_menu col-xs-12">
+          <h2>Contact</h2>
+          <div class="form_upload contact">
+            <p>Please, don't hesitate to send me any suggestion or question :)</p>
+            <%= simple_form_for @message, url: contact_path do |message_form| %>
+              <%= message_form.input :name, required: true, autofocus: true, placeholder: "Your name" %>
+              <%= message_form.input :email, required: true, autofocus: true, placeholder: "Your email"%>
+              <%= message_form.input :content, as: :text, required: true, autofocus: true, placeholder: "Your message", :input_html => { 'rows' => 5}%>
+              <p class="post-button-form">
+                <%= message_form.submit "Send", class:"btn btn-danger post-button-form" %>
+              </p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
