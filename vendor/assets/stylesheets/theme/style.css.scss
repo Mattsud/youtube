@@ -2027,3 +2027,35 @@ a.all_button {
 .category p {
   text-align:center;
 }
+
+@media (min-width: 1200px) {
+    .language p {
+      text-align: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .language ul {
+      text-align: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .category p {
+      text-align: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .category ul {
+      display: grid;
+      text-align: left;
+      margin-top: -10px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .category {
+      margin-top: -10px;
+    }
+}
