@@ -4,7 +4,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   mount_uploader :avatar, AvatarUploader
   attr_accessor :login
-  after_create :send_welcome_email
   has_many :videos
 
   devise :database_authenticatable, :registerable,
@@ -30,12 +29,6 @@ class User < ApplicationRecord
     elsif conditions.has_key?(:username) || conditions.has_key?(:email)
       where(conditions.to_hash).first
     end
-  end
-
-  private
-
-  def send_welcome_email
-    UserMailer.welcome(self).deliver_now
   end
 end
 
