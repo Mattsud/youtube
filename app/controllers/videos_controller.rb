@@ -5,6 +5,7 @@ require 'uri'
 
 class VideosController < ApplicationController
   before_action :authenticate_user!, only: [:new, :upvote]
+  before_filter :only_confirmed, only: [:new, :upvote]
   after_action :allow_youtube_iframe
 
   def index
