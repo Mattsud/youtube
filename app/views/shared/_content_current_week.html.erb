@@ -1,7 +1,7 @@
 <div class="row plans">
   <% @current_week.each do |video| %>
     <div class="center-block" style="width:650px;max-width:90%">
-      <div class="first_line col-xs-11">
+      <div class="first_line col-xs-12">
         <div class="image col-xs-12 col-sm-5">
           <div class="videowrapper_home">
             <%= video.embed_code.html_safe %>
