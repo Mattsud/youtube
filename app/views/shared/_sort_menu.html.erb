@@ -1,5 +1,5 @@
 <div class="sort_menu col-xs-12 col-sm-12 col-lg-2">
-  <div class="language col-xs-6 col-sm-6 col-lg-12">
+  <div class="language col-xs-5 col-sm-6 col-lg-12">
     <p>Language</p>
     <ul>
       <%= link_to videos_path(request.query_parameters.merge(language: "french")) do %>
@@ -11,12 +11,14 @@
       <li><%= link_to 'All', videos_path(:period => params[:period]), class: 'all_button' %></li>
     </ul>
   </div>
-  <div class="category col-xs-6 col-sm-6 col-lg-12">
+  <div class="category col-xs-7 col-sm-6 col-lg-12">
     <p>Category</p>
     <ul>
-      <li><%= link_to 'Comedy', videos_path(:period => params[:period]), class: 'all_button' %></li>
-      <li><%= link_to 'Film & Animation', videos_path(:period => params[:period]), class: 'all_button' %></li>
-      <li><%= link_to 'Music', videos_path(:period => params[:period]), class: 'all_button' %></li>
+      <li><%= link_to 'All', videos_path(), class: 'all_button' %></li>
+      <li><%= link_to 'Comedy', videos_path(request.query_parameters.merge(category: "Comedy")), class: 'all_button' %></li>
+      <li><%= link_to 'Film & Animation', videos_path(request.query_parameters.merge(category: "Film & Animation")), class: 'all_button' %></li>
+      <li><%= link_to 'People & Blogs', videos_path(request.query_parameters.merge(category: "People & Blogs")), class: 'all_button' %></li>
+      <li><%= link_to 'Sport', videos_path(request.query_parameters.merge(category: "Sport")), class: 'all_button' %></li>
     </ul>
   </div>
 </div>

@@ -37,6 +37,32 @@ class VideosController < ApplicationController
                         .where(is_published:true)
                         .order(:cached_votes_up => :desc)
     end
+
+    if params[:category]
+      @current_week = Video.where(category: params[:category])
+                           .where("created_at >= ?", Date.today.at_beginning_of_week)
+                           .where(is_published:true)
+                           .order(:cached_votes_up => :desc)
+
+      @last_week = Video.where(category: params[:category])
+                        .where("created_at <= ?", Date.today.at_beginning_of_week - 7)
+                        .where(is_published:true)
+                        .order(:cached_votes_up => :desc)
+    end
+
+        if params[:category] && params[:language]
+      @current_week = Video.where(category: params[:category])
+                           .where(language: params[:language])
+                           .where("created_at >= ?", Date.today.at_beginning_of_week)
+                           .where(is_published:true)
+                           .order(:cached_votes_up => :desc)
+
+      @last_week = Video.where(category: params[:category])
+                        .where(language: params[:language])
+                        .where("created_at <= ?", Date.today.at_beginning_of_week - 7)
+                        .where(is_published:true)
+                        .order(:cached_votes_up => :desc)
+    end
   end
 
   def show
@@ -82,7 +108,7 @@ class VideosController < ApplicationController
     @new_video.title = video.title
     @new_video.plateform_id = 1
     @new_video.description = video.description
-    @new_video.category_title = video.category_title
+    @new_video.category = video.category_title
     @new_video.view_count = video.view_count
     @new_video.length = video.duration
     @new_video.embed_code = video.embed_html
@@ -131,7 +157,7 @@ class VideosController < ApplicationController
     params.require(:video).permit(:title,
                                   :plateform_id,
                                   :description,
-                                  :category_title,
+                                  :category,
                                   :language,
                                   :view_count,
                                   :length,

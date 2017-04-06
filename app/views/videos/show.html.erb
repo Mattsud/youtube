@@ -5,7 +5,7 @@
         <h1><%= @video.title %></h1>
         <div class="under-title">
           <ul class="subtitle">
-            <li class="category"><%= @video.category_title %></li>
+            <li class="category_title"><%= @video.category %></li>
             <li class="duration"><%= Time.at(@video.length.to_i).utc.strftime("%M:%S")%></li>
           </ul>
         </div>

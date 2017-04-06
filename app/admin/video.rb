@@ -15,7 +15,7 @@ ActiveAdmin.register Video do
     column :is_published
     column :title
     column :language
-    column :category_title
+    column :category
     column :channel_title
     column :channel_subscribers
     actions
@@ -29,7 +29,7 @@ ActiveAdmin.register Video do
                 :user_id,
                 :link,
                 :is_published,
-                :category_title,
+                :category,
                 :language
 
       form :html => { :enctype => "multipart/form-data" } do |f|
@@ -40,7 +40,7 @@ ActiveAdmin.register Video do
       f.input :plateform
       f.input :link
       f.input :language
-      f.input :category_title
+      f.input :category
       f.input :user_id, :label => 'User',
                         :as => :select,
                         :collection => User.all.map{ |s| [ s.id ]}
