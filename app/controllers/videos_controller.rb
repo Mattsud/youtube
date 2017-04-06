@@ -9,7 +9,7 @@ class VideosController < ApplicationController
   after_action :allow_youtube_iframe
 
   def only_confirmed
-    redirect_to '/', notice: "You must confirm your email address before voting or posting a video" unless current_user.confirmed?
+    redirect_to '/', alert: "You must confirm your email address before voting or posting a video" unless current_user.confirmed?
   end
 
   def index
