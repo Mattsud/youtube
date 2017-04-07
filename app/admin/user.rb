@@ -1,6 +1,15 @@
 ActiveAdmin.register User do
   permit_params :username, :email, :password, :password_confirmation
 
+  actions :all, except: [:show]
+  config.filters = true
+
+  controller do
+    def find_resource
+      scoped_collection.where(slug: params[:id]).first!
+    end
+  end
+
   index do
     selectable_column
     id_column

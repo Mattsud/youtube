@@ -9,12 +9,14 @@
 user_1 = User.new(email:'mathieu@mathieu.com',
                   password: '111111',
                   username: 'mathieu',
+                  confirmed_at: Time.now,
                   admin: true)
 user_1.save!
 
 user_2 = User.new(email:'alexis@gmail.com',
                   password: '111111',
                   username: 'alexis',
+                  confirmed_at: Time.now,
                   admin: true)
 user_2.save!
 

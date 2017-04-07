@@ -13,7 +13,15 @@ class User < ApplicationRecord
   acts_as_voter
 
   validate :validate_username
-  friendly_id :username
+
+  friendly_id :slug_candidates, use: :slugged
+
+  def slug_candidates
+    [
+      :username,
+      [:username, :id],
+    ]
+  end
 
 
   def validate_username
