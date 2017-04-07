@@ -110,7 +110,6 @@ class VideosController < ApplicationController
     @new_video.plateform_id = 1
     @new_video.description = video.description
     @new_video.category = video.category_title
-    @new_video.view_count = video.view_count
     @new_video.length = video.duration
     @new_video.embed_code = video.embed_html
 
