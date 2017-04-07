@@ -80,6 +80,7 @@ class VideosController < ApplicationController
 
     if @new_video.user_id == 2
       @new_video.is_published == true
+    end
 
     if @new_video.save
       redirect_to videos_path, notice: "Thank you ! Your video will be reviewed and posted soon :)"
