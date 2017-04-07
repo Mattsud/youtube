@@ -138,7 +138,6 @@ class VideosController < ApplicationController
   def upvote
     @video = Video.friendly.find(params[:id])
     @video.liked_by current_user
-    end
     flash[:notice] = "Your upvote has been saved"
     redirect_to(:back)
   end
