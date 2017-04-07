@@ -10,4 +10,12 @@ class VideoMailer < ApplicationMailer
 
     mail(to: 'mathieu@risingtube.com', subject: 'New_video')
   end
+
+  def video_published_email(video)
+    @video = video
+    user_id = video.user_id
+    @user = User.find_by_id(user_id)
+
+    mail(to: @user.email, subject: 'Your video has been published')
+  end
 end

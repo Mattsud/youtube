@@ -15,8 +15,14 @@ class Video < ApplicationRecord
   friendly_id :slug_candidates, use: :slugged
   after_create :remake_slug
 
+  after_update :video_published_email, :if => :is_published_changed?
+
   extend Enumerize
     enumerize :language, in: [:french, :english]
+
+  def video_published_email
+    VideoMailer.video_published_email(self).deliver_now
+  end
 
   def slug_candidates
     [
