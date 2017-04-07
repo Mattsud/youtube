@@ -17,7 +17,7 @@ textarea {
   font-size: 14px;
 }
 a {
-  color: #16a085;
+  color: #165d92;
   text-decoration: none;
   -webkit-transition: 0.25s;
   -moz-transition: 0.25s;
@@ -1997,7 +1997,7 @@ a.all_button {
 }
 
 .language {
-    text-align: center;
+    text-align: left;
 }
 
 
@@ -2006,7 +2006,7 @@ a.all_button {
 }
 
 .sort_menu li {
-    padding: 3px;
+    padding-top: 3px;
 }
 
 .sort_menu ul {
@@ -2022,13 +2022,17 @@ a.all_button {
 }
 
 .category {
-  text-align:center;
+  text-align:left;
 }
 
 .category p {
-  text-align:center;
+  text-align:left;
 }
 
+.language p {
+    text-align: left;
+    margin-left: -10px;
+}
 
 @media (min-width: 1200px) {
     .sort_menu {
@@ -2049,6 +2053,7 @@ a.all_button {
 @media (min-width: 1200px) {
     .language p {
       text-align: left;
+      margin-left:0px
     }
 }
 
