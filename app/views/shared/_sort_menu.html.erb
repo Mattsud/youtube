@@ -8,24 +8,24 @@
       <%= link_to videos_path(request.query_parameters.merge(language: "english")) do %>
         <li><%= image_tag "english_flag.png", height: 25, width: 25, crop: :fill %></li>
       <% end %>
-      <li><%= link_to 'All', videos_path(:period => params[:period]), class: 'all_button' %></li>
+      <li><%= active_link_to 'All', videos_path(:period => params[:period], :category => params[:category]), active: :exact, class: 'all_button' %></li>
     </ul>
   </div>
   <div class="category col-xs-4 col-sm-4 col-lg-12">
     <p>Category</p>
     <ul>
-      <li><%= link_to 'Comedy', videos_path(request.query_parameters.merge(category: "Comedy")), class: 'all_button' %></li>
-      <li><%= link_to 'Film', videos_path(request.query_parameters.merge(category: "Film & Animation")), class: 'all_button' %></li>
-      <li><%= link_to 'People', videos_path(request.query_parameters.merge(category: "People & Blogs")), class: 'all_button' %></li>
-      <li><%= link_to 'Sport', videos_path(request.query_parameters.merge(category: "Sports")), class: 'all_button' %></li>
-      <li><%= link_to 'All', videos_path(), class: 'all_button' %></li>
+      <li><%= active_link_to 'Comedy', videos_path(request.query_parameters.merge(category: "Comedy")), active: {category: "Comedy"}, class: 'all_button' %></li>
+      <li><%= active_link_to 'Film', videos_path(request.query_parameters.merge(category: "Film & Animation")), active: {category: "Film & Animation"}, class: 'all_button' %></li>
+      <li><%= active_link_to 'People', videos_path(request.query_parameters.merge(category: "People & Blogs")), active: {category: "People & Blogs"}, class: 'all_button' %></li>
+      <li><%= active_link_to 'Sport', videos_path(request.query_parameters.merge(category: "Sports")), active: {category: "Sports"}, class: 'all_button' %></li>
+      <li><%= active_link_to 'All', videos_path(:language => params[:language], :period => params[:period]), active: :exact, class: 'all_button' %></li>
     </ul>
   </div>
   <div class="category col-xs-4 col-sm-4 col-lg-12">
     <p>Period</p>
     <ul>
-      <li><%= link_to "Current week", videos_path(request.query_parameters.merge(:period => "current_week")), class: 'all_button' %></li>
-      <li><%= link_to 'Last week', videos_path(request.query_parameters.merge(:period => "last_week")), class: 'all_button' %></li>
+      <li><%= active_link_to "Current week", videos_path(request.query_parameters.merge(:period => "current_week")), active: {period: "current_week"}, class: 'all_button' %></li>
+      <li><%= active_link_to 'Last week', videos_path(request.query_parameters.merge(:period => "last_week")), active: {period: "last_week"}, class: 'all_button' %></li>
     </ul>
   </div>
 </div>

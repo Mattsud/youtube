@@ -70,7 +70,7 @@ h1 {
   font-weight: 500;
 }
 h2 {
-  font-weight: 700;
+  font-weight: 200;
   margin-bottom: 2px;
 }
 h3 {
@@ -1976,6 +1976,7 @@ a.all_button {
     margin-top: 35px;
     font-size: 25px;
     margin-bottom: 25px;
+    font-weight: bold;
 }
 
 .content p {
@@ -2058,7 +2059,7 @@ a.all_button {
     }
 }
 
-@media (min-width: 703px) {
+@media (min-width: 500px) {
 .language li {
     display: -webkit-inline-box;
   }
@@ -2087,4 +2088,8 @@ a.all_button {
 
 .category li {
     display: -webkit-inline-box;
+}
+
+.active {
+    font-weight: bold;
 }
