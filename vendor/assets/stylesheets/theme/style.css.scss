@@ -2000,12 +2000,13 @@ a.all_button {
     text-align: center;
 }
 
+
 .sort_menu {
     text-align: center;
 }
 
 .sort_menu li {
-    padding: 5px;
+    padding: 3px;
 }
 
 .sort_menu ul {
@@ -2041,9 +2042,9 @@ a.all_button {
 @media (min-width: 1200px) {
     .language {
       text-align: left;
-      padding-bottom: 20px;
     }
 }
+
 
 @media (min-width: 1200px) {
     .language p {
@@ -2057,9 +2058,16 @@ a.all_button {
     }
 }
 
+@media (min-width: 703px) {
+.language li {
+    display: -webkit-inline-box;
+  }
+}
+
 @media (min-width: 1200px) {
     .category p {
       text-align: left;
+      margin-top: 10px;
     }
 }
 
@@ -2075,4 +2083,8 @@ a.all_button {
     .category {
       margin-top: -10px;
     }
+}
+
+.category li {
+    display: -webkit-inline-box;
 }
