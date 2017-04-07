@@ -4,8 +4,11 @@
       <div class="navbar col-sm-12" role="navigation">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collaped" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"><span class="sr-only">Toggle navigation</span></button>
-
-          <%= link_to "RisingTube", root_path, class:"brand" %>
+          <div class="logo">
+            <%= link_to root_path do %>
+              <% image_tag "logo_2.png", size: "200x50", alt: "Logo RisingTube" %>
+            <% end %>
+          </div>
         </div>
         <div class="navbar-collapse pull-right collapse" id="navbar-collapse" aria-expanded="false">
           <ul class="nav pull-left">

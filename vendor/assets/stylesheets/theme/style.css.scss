@@ -1665,7 +1665,7 @@ section * {
 .heading {
     box-shadow: 1px 1px 3px 2px #ebedee;
     background-color: white;
-    padding: 5px 0px 8px 0px;
+    padding: 5px 15px 4px 15px;
 }
 
 
@@ -1687,7 +1687,7 @@ section * {
 .heading p {
     font-size: 16px;
     text-align: center;
-    padding: 5px 10px 1px 10px;
+    padding: 5px 15px 1px 15px;
 }
 
 p.text_form {
@@ -2114,4 +2114,8 @@ li.category {
 .confirmation a {
     color: #165d92;
     text-decoration: underline;
+}
+
+.logo {
+    padding-top: 20px;
 }
