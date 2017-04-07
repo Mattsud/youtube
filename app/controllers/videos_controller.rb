@@ -80,6 +80,7 @@ class VideosController < ApplicationController
 
     if @new_video.save
       redirect_to videos_path, notice: "Thank you ! Your video will be reviewed and posted soon :)"
+      Video.send_email_admin(@new_video)
     else
       render :new
     end

@@ -50,6 +50,10 @@ class Video < ApplicationRecord
     created_at.localtime.strftime("%d")
   end
 
+  def self.send_email_admin(video)
+    VideoMailer.video_publish(self).deliver_now
+  end
+
   def self.parse_video_url(url)
     @url = url
 
