@@ -78,6 +78,9 @@ class VideosController < ApplicationController
     @new_video = Video.new(new_video_params)
     check_link_youtube(@new_video.link)
 
+    if @new_video.user_id == 2
+      @new_video.is_published == true
+
     if @new_video.save
       redirect_to videos_path, notice: "Thank you ! Your video will be reviewed and posted soon :)"
       Video.send_email_admin(@new_video)
@@ -135,6 +138,7 @@ class VideosController < ApplicationController
   def upvote
     @video = Video.friendly.find(params[:id])
     @video.liked_by current_user
+    end
     flash[:notice] = "Your upvote has been saved"
     redirect_to(:back)
   end
