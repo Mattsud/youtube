@@ -99,3 +99,6 @@ gem 'kaminari'
 gem 'friendly_id', '~> 5.1.0'
 gem 'enumerize'
 gem 'active_link_to'
+
+# Favicon
+gem 'rails_real_favicon'
