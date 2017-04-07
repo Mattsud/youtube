@@ -79,7 +79,7 @@ class VideosController < ApplicationController
     check_link_youtube(@new_video.link)
 
     if @new_video.user_id == 2
-      @new_video.is_published == true
+      @new_video.is_published = true
     end
 
     if @new_video.save
