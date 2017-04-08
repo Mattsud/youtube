@@ -18,6 +18,7 @@
           </ul>
           <% if current_user == nil %>
             <form class="navbar-form pull-left">
+              <%= link_to "POST A VIDEO", add_a_video_path, class:"btn btn-primary btn-sm" %>
               <%= link_to "LOG IN", new_user_session_path, class:"btn btn-default btn-sm" %>
               <%= link_to "SIGN UP", new_user_registration_path, class:"btn btn-danger btn-sm" %>
             </form>
