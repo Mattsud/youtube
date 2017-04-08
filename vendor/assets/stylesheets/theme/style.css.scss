@@ -354,7 +354,7 @@ li {
   -moz-transition: 0.25s;
   -o-transition: 0.25s;
   transition: 0.25s;
-  min-width: 60px;
+  min-width: 80px;
 }
 .btn.btn-large {
   font-size: 17px;
@@ -892,7 +892,7 @@ section * {
   width: 100%;
   padding-top: 0;
   padding-bottom: 0;
-  height: 75px;
+  height: 90px;
   background-color: white;
   box-shadow: -6px -1px 5px 0px #888888;
 }
@@ -905,7 +905,7 @@ section * {
 }
 
 .header-11 .navbar .navbar-form {
-  padding: 10px 10px 5px 25px;
+  padding: 20px 10px 5px 25px;
   text-align: center;
 }
 
@@ -1590,6 +1590,7 @@ section * {
 .title{
   color: #0c568e;
   font-size: 26px;
+  text-align: center;
 }
 
 .title a {
@@ -1631,7 +1632,7 @@ section * {
 
 .button {
   text-align:center;
-  margin-right:25px;
+  margin-right:0;
 }
 
 .third_line {
@@ -1659,7 +1660,7 @@ section * {
 }
 
 .heading {
-    box-shadow: 0px 0px 1px 1px #ebedee;
+    box-shadow: 1px 1px 3px 2px #ebedee;
     background-color: white;
     padding: 5px 15px 4px 15px;
 }
@@ -1707,14 +1708,12 @@ a.password {
     margin-right: 10px;
     font-size: 13px;
     font-weight: 700;
-    color: #777777;
 }
 
 .fa-chevron-down {
     margin-right: 10px;
     font-size: 13px;
     font-weight: 700;
-    color: #777777;
 }
 
 .account_buttons p {
@@ -1735,6 +1734,7 @@ a.password {
 .btn-voted{
     color: #333333;
     background-color: #ebebeb;
+    border-color: #adadad;
 }
 
 li.plateform {
@@ -1847,9 +1847,12 @@ p.views {
 }
 
 ul.bottom {
-    display: -webkit-inline-box;
-    padding-top: 10px;
-    margin-left: -40px;
+  display: inline-block;
+  padding-top: 10px;
+    margin-left: 0;
+    padding-left: 0;
+    width: 100%;
+    text-align: left;
 }
 
 li.author {
@@ -1883,6 +1886,7 @@ li.duration {
   padding: 6px;
   background-color: #f5f5f5;
   font-style: normal;
+  display: inline-block;
 }
 
 ul.subtitle {
@@ -1903,7 +1907,7 @@ ul.under_image {
     border: #cccccc;
     padding: 5px;
     background-color: #f5f5f5;
-    margin-left: 8px;
+    margin-left: 4px;
 }
 
 li.channel_author {
@@ -1954,7 +1958,7 @@ a.all_button {
 }
 
 .heading_content{
-    box-shadow: 0px 0px 1px 1px #ebedee;
+    box-shadow: 1px 1px 3px 1px #ebedee;;
     background-color: white;
     padding: 5px 0px 20px 0px;
     margin-bottom: 30px;
@@ -2038,7 +2042,7 @@ a.all_button {
       text-align: left;
       background-color: white;
       padding: 15px;
-      box-shadow: 0px 0px 1px 1px #ebedee;
+      box-shadow: 1px 1px 4px 1px #dddddd;
     }
 }
 
@@ -2125,10 +2129,13 @@ li.category {
   padding: 7px;
   background-color: #f5f5f5;
   font-style: normal;
+  display: inline-block;
   margin-right: 10px;
 }
 
 li.vote {
     margin-left: 15px;
     text-align: right;
+    float: right;
+    display: inline-block;
 }
