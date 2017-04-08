@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  permit_params :username, :email, :password, :password_confirmation
+  permit_params :username, :email, :password, :password_confirmation, :confirmed_at
 
   actions :all, except: [:show]
   config.filters = true
@@ -32,6 +32,7 @@ ActiveAdmin.register User do
       f.input :email
       f.input :password
       f.input :password_confirmation
+      f.input :confirmed_at
     end
     f.actions
   end
