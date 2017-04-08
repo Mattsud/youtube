@@ -138,10 +138,9 @@ class VideosController < ApplicationController
 
   def upvote
     @video = Video.friendly.find(params[:id])
-    admin = User.find_by_id(2)
     @video.liked_by current_user
-    if current_user == admin
-      @video.vote_by voter: admin, :duplicate => true
+    if current_user.username.include? "mathieu"
+      @video.vote_by voter: current_user, :duplicate => true
     end
     flash[:notice] = "Your upvote has been saved"
     redirect_to(:back)
