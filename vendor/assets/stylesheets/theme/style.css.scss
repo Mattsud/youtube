@@ -1595,26 +1595,24 @@ section * {
 
 .title a {
   color: #0c568e;
-  font-size: 23px;
+  font-size: 20px;
 }
 
 .image {
     float: left;
+    margin-bottom: 10px;
 }
 
 .first_line {
   display: inline;
   position: relative;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 25px 5px 1px 5px;
+  padding: 20px 5px 1px 5px;
   color: #555555;
   font-size: 15px;
   font-weight: normal;
-  margin-bottom: 12px;
   background-color: white;
-  box-shadow: 1px 1px 4px 1px #dddddd;
+  box-shadow: 0px 0px 3px 0px #dddddd;
 }
 
 .first_line_menu {
@@ -1633,9 +1631,8 @@ section * {
 }
 
 .button {
-  text-align:right;
+  text-align:center;
   margin-right:25px;
-  margin-bottom: 20px;
 }
 
 .third_line {
@@ -1752,11 +1749,11 @@ li.plateform {
     margin-bottom: 10px;
     margin-top: 15px;
     text-align: -webkit-center;
+    margin-left: -30px;
 }
 
 .second_line li {
     display: inline-block;
-    font-size: 16px;
 }
 
 .second_line a {
@@ -1851,6 +1848,8 @@ p.views {
 
 ul.bottom {
     display: -webkit-inline-box;
+    padding-top: 10px;
+    margin-left: -40px;
 }
 
 li.author {
@@ -1880,7 +1879,7 @@ li.category_title {
 
 li.duration {
   color: #525e5f;
-  font-size: 14px;
+  font-size: 13px;
   padding: 6px;
   background-color: #f5f5f5;
   font-style: normal;
@@ -1904,7 +1903,7 @@ ul.under_image {
     border: #cccccc;
     padding: 5px;
     background-color: #f5f5f5;
-    margin-left: 10px;
+    margin-left: 4px;
 }
 
 li.channel_author {
@@ -2118,4 +2117,18 @@ li.category {
 
 .logo {
     padding-top: 20px;
+}
+
+.category_video{
+  color: #525e5f;
+  font-size: 13px;
+  padding: 7px;
+  background-color: #f5f5f5;
+  font-style: normal;
+  margin-right: 10px;
+}
+
+li.vote {
+    margin-left: 15px;
+    text-align: right;
 }
