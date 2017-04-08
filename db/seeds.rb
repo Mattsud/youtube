@@ -60,7 +60,7 @@ user_17 = User.new(email:'alexvfisss@gmlloi.com',
                   password: '111111',
                   username: 'mathieu15',
                   confirmed_at: Time.now)
-user_18.save!
+user_17.save!
 
 user_18 = User.new(email:'alexivdsss@gmlloi.com',
                   password: '111111',
