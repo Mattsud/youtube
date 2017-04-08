@@ -347,6 +347,7 @@ li {
   line-height: 20px;
   list-style: none;
 }
+
 .btn {
   line-height: 22px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -355,6 +356,9 @@ li {
   -o-transition: 0.25s;
   transition: 0.25s;
   min-width: 80px;
+}
+li.vote a.btn{
+   min-width: 60px;
 }
 .btn.btn-large {
   font-size: 17px;
