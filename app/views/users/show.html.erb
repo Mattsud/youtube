@@ -26,7 +26,7 @@
               <div class="second_line col-xs-12">
                 <ul>
                   <li class="author"><%= cl_image_tag video.channel_thumbnail, height: 40, width: 40, crop: :fill %></li>
-                  <li class="channel_author"><i class="fa fa-user" aria-hidden="true"></i> <%= truncate(video.channel_title, :length => 17)%></li>
+                  <li class="channel_author"><%= truncate(video.channel_title, :length => 17)%></li>
                   <li class="subscribers"><%= number_with_delimiter(video.channel_subscribers) %></li>
                 </ul>
               </div>
