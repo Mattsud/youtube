@@ -15,23 +15,27 @@ class VideosController < ApplicationController
   def index
     @today_date = Date.parse(params[:date]) rescue Date.today
     @last_week_date = Date.today - 7
-
     @total_videos   = Video.count
 
-    @new_video = Video.where("created_at >= ?", Time.now - 6.hours)
+    @new_video = Video.where("updated_at >= ?", Time.now - 4.hours)
                          .where(is_published:true)
                          .order("created_at DESC")
 
     @current_week = Video.where("created_at >= ?", Date.today - 7.days)
                          .where(is_published:true)
                          .order(:cached_votes_up => :desc)
-                         .where.not("created_at >= ?", Time.now - 6.hours)
+                         .where.not("created_at >= ?", Time.now - 4.hours)
 
     @last_week = Video.where("created_at <= ?", Date.today - 7.days)
                       .where(is_published:true)
                       .order(:cached_votes_up => :desc)
 
     if params[:language]
+      @new_video = Video.where(language: params[:language])
+                        .where("created_at >= ?", Time.now - 4.hours)
+                        .where(is_published:true)
+                        .order("created_at DESC")
+
       @current_week = Video.where(language: params[:language])
                            .where("created_at >= ?", Date.today.at_beginning_of_week)
                            .where(is_published:true)
@@ -44,6 +48,11 @@ class VideosController < ApplicationController
     end
 
     if params[:category]
+      @new_video = Video.where(category: params[:category])
+                        .where("created_at >= ?", Time.now - 4.hours)
+                        .where(is_published:true)
+                        .order("created_at DESC")
+
       @current_week = Video.where(category: params[:category])
                            .where("created_at >= ?", Date.today.at_beginning_of_week)
                            .where(is_published:true)
@@ -55,7 +64,13 @@ class VideosController < ApplicationController
                         .order(:cached_votes_up => :desc)
     end
 
-        if params[:category] && params[:language]
+    if params[:category] && params[:language]
+      @new_video = Video.where("created_at >= ?", Time.now - 4.hours)
+                        .where(category: params[:category])
+                        .where(language: params[:language])
+                        .where(is_published:true)
+                        .order("created_at DESC")
+
       @current_week = Video.where(category: params[:category])
                            .where(language: params[:language])
                            .where("created_at >= ?", Date.today.at_beginning_of_week)

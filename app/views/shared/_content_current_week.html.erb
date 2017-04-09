@@ -1,40 +1,38 @@
-<div class="row plans">
-  <% @current_week.each do |video| %>
-    <div class="center-block" style="width:650px;max-width:90%">
-      <div class="first_line col-xs-12">
-        <div class="image col-xs-12 col-sm-6">
-          <div class="videowrapper_home">
-            <%= video.embed_code.html_safe %>
-          </div>
+<% @current_week.each do |video| %>
+  <div class="center-block" style="width:650px;max-width:90%">
+    <div class="first_line col-xs-12">
+      <div class="image col-xs-12 col-sm-6">
+        <div class="videowrapper_home">
+          <%= video.embed_code.html_safe %>
         </div>
-        <div class="title col-xs-12 col-sm-6">
-          <% if video.language == "french" %>
-            <%= image_tag "french_flag.png", height: 20, width: 20, crop: :fill %> <%= link_to truncate(video.title, :length => 50), video_path(video) %>
-          <% else %>
-            <%= image_tag "english_flag.png", height: 20, width: 20, crop: :fill %> <%= link_to truncate(video.title, :length => 50), video_path(video) %>
-          <% end %>
-          <div class="second_line col-xs-12">
-            <ul>
-              <li class="author"><%= cl_image_tag video.channel_thumbnail, height: 40, width: 40, crop: :fill %></li>
-              <li class="channel_author"><%= truncate(video.channel_title, :length => 17)%></li>
-              <li class="subscribers"><%= number_with_delimiter(video.channel_subscribers) %></li>
-            </ul>
-          </div>
-        </div>
-        <div class="button col-xs-12 col-sm-6">
-          <ul class="bottom">
-            <li class="category_video"><%= video.category %></li>
-            <li class="duration"><%= Time.at(video.length.to_i).utc.strftime("%M:%S")%></li>
-            <% if current_user == nil %>
-              <li class="vote"><%= link_to glyph(:'chevron-up') + "#{video.score}", like_video_path(video), method: :put, class: 'btn btn-default btn-sm' %></li>
-            <% elsif current_user.voted_for? video %>
-              <li class="vote"><%= link_to glyph(:'chevron-up') + "#{video.score}", dislike_video_path(video), method: :put, class: 'btn btn-default btn-sm btn-voted' %></li>
-            <% else %>
-              <li class="vote"><%= link_to glyph(:'chevron-up') + "#{video.score}", like_video_path(video), method: :put, class: 'btn btn-default btn-sm' %></li>
-            <% end %>
+      </div>
+      <div class="title col-xs-12 col-sm-6">
+        <% if video.language == "french" %>
+          <%= image_tag "french_flag.png", height: 20, width: 20, crop: :fill %> <%= link_to truncate(video.title, :length => 50), video_path(video) %>
+        <% else %>
+          <%= image_tag "english_flag.png", height: 20, width: 20, crop: :fill %> <%= link_to truncate(video.title, :length => 50), video_path(video) %>
+        <% end %>
+        <div class="second_line col-xs-12">
+          <ul>
+            <li class="author"><%= cl_image_tag video.channel_thumbnail, height: 40, width: 40, crop: :fill %></li>
+            <li class="channel_author"><%= truncate(video.channel_title, :length => 17)%></li>
+            <li class="subscribers"><%= number_with_delimiter(video.channel_subscribers) %></li>
           </ul>
         </div>
       </div>
+      <div class="button col-xs-12 col-sm-6">
+        <ul class="bottom">
+          <li class="category_video"><%= video.category %></li>
+          <li class="duration"><%= Time.at(video.length.to_i).utc.strftime("%M:%S")%></li>
+          <% if current_user == nil %>
+            <li class="vote"><%= link_to glyph(:'chevron-up') + "#{video.score}", like_video_path(video), method: :put, class: 'btn btn-default btn-sm' %></li>
+          <% elsif current_user.voted_for? video %>
+            <li class="vote"><%= link_to glyph(:'chevron-up') + "#{video.score}", dislike_video_path(video), method: :put, class: 'btn btn-default btn-sm btn-voted' %></li>
+          <% else %>
+            <li class="vote"><%= link_to glyph(:'chevron-up') + "#{video.score}", like_video_path(video), method: :put, class: 'btn btn-default btn-sm' %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
