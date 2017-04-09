@@ -8,9 +8,9 @@
         </div>
         <div class="title col-xs-12 col-sm-6">
           <% if video.language == "french" %>
-            <%= image_tag "french_flag.png", height: 20, width: 20, crop: :fill %> <%= link_to truncate(video.title, :length => 47) + '<span class="new">*New*</span>'.html_safe, video_path(video) %>
+            <%= image_tag "french_flag.png", height: 20, width: 20, crop: :fill %> <%= link_to truncate(video.title, :length => 47) + '<span class="new">*NEW*</span>'.html_safe, video_path(video) %>
           <% else %>
-            <%= image_tag "english_flag.png", height: 20, width: 20, crop: :fill %> <%= link_to truncate(video.title, :length => 47) + '<span class="new">*New*</span>'.html_safe, video_path(video) %>
+            <%= image_tag "english_flag.png", height: 20, width: 20, crop: :fill %> <%= link_to truncate(video.title, :length => 47) + '<span class="new">*NEW*</span>'.html_safe, video_path(video) %>
           <% end %>
           <div class="second_line col-xs-12">
             <ul>
