@@ -24,7 +24,7 @@ class VideosController < ApplicationController
     @current_week = Video.where("created_at >= ?", Date.today - 7.days)
                          .where(is_published:true)
                          .order(:cached_votes_up => :desc)
-                         .where.not("created_at >= ?", Time.now - 4.hours)
+                         .where.not("updated_at >= ?", Time.now - 4.hours)
 
     @last_week = Video.where("created_at <= ?", Date.today - 7.days)
                       .where(is_published:true)

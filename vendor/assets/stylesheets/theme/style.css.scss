@@ -1628,7 +1628,8 @@ section * {
   font-size: 15px;
   font-weight: normal;
   background-color: #fbfbfb;
-  box-shadow: 0px 0px 3px 0px #dddddd;
+  border: 2px dashed #ddd;
+  margin-bottom: 2px;
 }
 
 .first_line_menu {
@@ -2152,8 +2153,8 @@ li.vote {
 
 span.new {
     color: #0c568e;
-    font-size: 14px;
-    border: #cccccc;
+    font-size: 15px;
+    border: 1px solid #ddd;
     padding: 5px;
     background-color: #f5f5f5;
     margin-left: 4px;
