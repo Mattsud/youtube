@@ -31,7 +31,7 @@
                 </ul>
               </div>
             </div>
-            <div class="button col-xs-12 col-sm-5">
+            <div class="button col-xs-12 col-sm-6">
               <ul class="bottom">
                 <li class="category_video"><%= video.category %></li>
                 <li class="duration"><%= Time.at(video.length.to_i).utc.strftime("%M:%S")%></li>
@@ -49,4 +49,5 @@
       <% end %>
     </div>
   </div>
+</section>
 

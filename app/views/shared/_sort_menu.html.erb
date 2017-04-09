@@ -2,8 +2,8 @@
   <div class="language col-xs-4 col-sm-4 col-lg-12">
     <p>Language</p>
     <ul>
-      <li><%= active_link_to "French", videos_path(request.query_parameters.merge(language: "french")), class: 'all_button' %></li>
-      <li><%= active_link_to "English", videos_path(request.query_parameters.merge(language: "english")), class: 'all_button' %></li>
+      <li><%= link_to "French", videos_path(request.query_parameters.merge(language: "french")), class: 'all_button' %></li>
+      <li><%= link_to "English", videos_path(request.query_parameters.merge(language: "english")), class: 'all_button' %></li>
       <li><%= active_link_to 'All', videos_path(:period => params[:period], :category => params[:category]), active: :exact, class: 'all_button' %></li>
     </ul>
   </div>

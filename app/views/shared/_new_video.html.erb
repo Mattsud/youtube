@@ -1,7 +1,6 @@
-<div class="row plans">
-  <% @current_week.each do |video| %>
+<% @new_video.each do |video| %>
     <div class="center-block" style="width:650px;max-width:90%">
-      <div class="first_line col-xs-12">
+      <div class="first_line_new col-xs-12">
         <div class="image col-xs-12 col-sm-6">
           <div class="videowrapper_home">
             <%= video.embed_code.html_safe %>
@@ -9,9 +8,9 @@
         </div>
         <div class="title col-xs-12 col-sm-6">
           <% if video.language == "french" %>
-            <%= image_tag "french_flag.png", height: 20, width: 20, crop: :fill %> <%= link_to truncate(video.title, :length => 50), video_path(video) %>
+            <%= image_tag "french_flag.png", height: 20, width: 20, crop: :fill %> <%= link_to truncate(video.title, :length => 50) + '<span class="new">*New*</span>'.html_safe , video_path(video) %>
           <% else %>
-            <%= image_tag "english_flag.png", height: 20, width: 20, crop: :fill %> <%= link_to truncate(video.title, :length => 50), video_path(video) %>
+            <span class="new">New</span> <%= image_tag "english_flag.png", height: 20, width: 20, crop: :fill %> <%= link_to truncate(video.title, :length => 50), video_path(video) %>
           <% end %>
           <div class="second_line col-xs-12">
             <ul>
@@ -37,4 +36,3 @@
       </div>
     </div>
   <% end %>
-</div>

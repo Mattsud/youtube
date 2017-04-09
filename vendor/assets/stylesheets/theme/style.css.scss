@@ -1619,6 +1619,18 @@ section * {
   box-shadow: 0px 0px 3px 0px #dddddd;
 }
 
+.first_line_new {
+  display: inline;
+  position: relative;
+  box-sizing: border-box;
+  padding: 20px 5px 1px 5px;
+  color: #555555;
+  font-size: 15px;
+  font-weight: normal;
+  background-color: #fbfbfb;
+  box-shadow: 0px 0px 3px 0px #dddddd;
+}
+
 .first_line_menu {
   display: inline;
   position: relative;
@@ -2136,4 +2148,13 @@ li.vote {
     text-align: right;
     float: right;
     display: inline-block;
+}
+
+span.new {
+    color: #0c568e;
+    font-size: 14px;
+    border: #cccccc;
+    padding: 5px;
+    background-color: #f5f5f5;
+    margin-left: 4px;
 }
