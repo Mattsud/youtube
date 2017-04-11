@@ -4,7 +4,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   mount_uploader :avatar, AvatarUploader
   attr_accessor :login
-  has_many :videos
+
+  has_many :videos do
+
+    def today
+      where(:created_at => (Time.zone.now.beginning_of_day..Time.zone.now))
+    end
+  end
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
